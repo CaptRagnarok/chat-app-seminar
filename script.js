@@ -5,9 +5,17 @@ const CLIENT_ID = 'SvKe8brTvD9tOzJQ';
 const drone = new ScaleDrone(CLIENT_ID, {
   data: {
     // Will be sent out as clientData via events
-    name: prompt('Enter your name:'),
+    name: localStorage.getItem('name') || '',
     color: getRandomColor(),
   },
+});
+
+const logoutButton = document.querySelector('.logout-button');
+
+logoutButton.addEventListener('click', function () {
+  localStorage.removeItem('name');
+
+  window.location.href = './login.html';
 });
 // ------------------------------------------
 
@@ -216,7 +224,9 @@ function getRandomColor() {
   return '#' + Math.floor(Math.random() * 0xffffff).toString(16);
 }
 
-//------------- DOM STUFF
+//----------------------------------
+//------------- DOM STUFF----------|
+//----------------------------------
 
 const DOM = {
   membersCount: document.querySelector('.members-count'),
