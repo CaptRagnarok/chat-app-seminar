@@ -15,7 +15,7 @@ const logoutButton = document.querySelector('.logout-button');
 logoutButton.addEventListener('click', function () {
   localStorage.removeItem('name');
 
-  window.location.href = './login.html';
+  window.location.href = './index.html';
 });
 // ------------------------------------------
 

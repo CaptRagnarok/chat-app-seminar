@@ -7,5 +7,5 @@ loginForm.addEventListener('submit', (e) => {
 
   localStorage.setItem('name', loginName);
 
-  window.location.href = './index.html';
+  window.location.href = './chatapp.html';
 });
