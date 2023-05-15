@@ -10,11 +10,10 @@
 body {
   height: 100%;
   background: $clr-bk;
-  border: 2px dotted red;
 }
 // background art code
 .background {
-  width: 430px;
+  width: 360px;
   height: 520px;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -22,20 +21,20 @@ body {
   top: 50%;
 }
 .background .shape {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   position: absolute;
   border-radius: 50%;
 }
 .shape:first-child {
   background: $gradient-1;
-  left: 320px;
-  top: -80px;
+  left: 250px;
+  top: 0;
 }
 .shape:last-child {
   background: $gradient-2;
-  right: 270px;
-  bottom: -80px;
+  right: 240px;
+  bottom: -10px;
 }
 
 // targets circles on button hover
@@ -56,7 +55,7 @@ form {
   @include center-div;
   background-color: $clr-gray-bcg;
   height: 420px;
-  width: 400px;
+  width: 280px;
   padding: 50px 35px;
 }
 
@@ -139,14 +138,31 @@ button:hover {
     box-sizing: 0 0 0 0;
   }
 }
-input:invalid + span {
-  color: red;
-  font-weight: bold;
-}
 
 //--------------------
 // RESPONSIVE LAYOUT
 //--------------------
 @media screen and (min-width: 415px) {
   // responsive layout goes here
+  .background {
+    width: 430px;
+  }
+  .background .shape {
+    height: 200px;
+    width: 200px;
+  }
+  form {
+    height: 420px;
+    width: 430px;
+  }
+  .shape:first-child {
+    background: $gradient-1;
+    left: 320px;
+    top: -80px;
+  }
+  .shape:last-child {
+    background: $gradient-2;
+    right: 270px;
+    bottom: -80px;
+  }
 }
