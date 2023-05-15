@@ -1,0 +1,140 @@
+//---------------------
+// IMPORTS
+//---------------------
+@import 'base/reset';
+@import 'base/colors_typo';
+@import 'abstracts/mixins.scss';
+
+//---------------------
+
+body {
+  height: 100%;
+  background: $clr-bk;
+}
+// background art code
+.background {
+  width: 430px;
+  height: 520px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+.background .shape {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+.shape:first-child {
+  background: $gradient-1;
+  left: 320px;
+  top: -80px;
+}
+.shape:last-child {
+  background: $gradient-2;
+  right: 270px;
+  bottom: -80px;
+}
+
+// targets circles on button hover
+body:has(button:hover) .shape:first-child {
+  animation: shape1 1.5s infinite ease-in-out;
+}
+body:has(button:hover) .shape:last-child {
+  animation: shape2 1.5s infinite ease-in-out;
+}
+
+//---------------------
+// LOGIN FORM
+//---------------------
+
+form {
+  @include border_n_shadow;
+  @include blur;
+  @include center-div;
+  background-color: $clr-gray-bcg;
+  height: 420px;
+  width: 400px;
+  padding: 50px 35px;
+}
+
+/* targets descendants */
+form * {
+  @include form-reset;
+  color: $clr-wt;
+  font-family: $ft-login;
+  letter-spacing: 0.5px;
+}
+form h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
+}
+input {
+  background-color: $clr-gray-inp;
+  display: block;
+  height: 50px;
+  width: 100%;
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 300;
+}
+input::placeholder {
+  transition: $transition;
+  color: $clr-wt-90;
+}
+input:focus::placeholder {
+  color: $clr-wt-60;
+}
+button {
+  @include btn;
+  margin-top: 50px;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+button:hover {
+  background-color: $clr-bk-95;
+  color: $clr-wt-90;
+  outline: 0.25px solid $clr-wt-90;
+}
+
+//----------------------
+// ANIMATION
+//----------------------
+
+@keyframes shape1 {
+  0% {
+    box-shadow: 0 0 0 0 $clr-yellow-lt;
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(128, 0, 128, 0);
+  }
+  100% {
+    box-sizing: 0 0 0 0;
+  }
+}
+
+@keyframes shape2 {
+  0% {
+    box-shadow: 0 0 0 0 $clr-green-lt;
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(128, 0, 128, 0);
+  }
+  100% {
+    box-sizing: 0 0 0 0;
+  }
+}

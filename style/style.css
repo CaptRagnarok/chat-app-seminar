@@ -1,0 +1,81 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal; }
+
+ul {
+  list-style-type: none; }
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 13px;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+
+/* First three rows */
+.members-count,
+.members-list,
+.messages {
+  border: 1px solid #e4e4e4;
+  padding: 15px;
+  margin-bottom: 15px; }
+
+/* 3rd row div, where msgs go */
+.messages {
+  flex-shrink: 1;
+  overflow: auto; }
+
+/* msg content (once any msgs exist) */
+.message {
+  padding: 5px 0; }
+
+/* member name next to a posted msg */
+.message .member {
+  display: inline-block; }
+
+/* member in the members-list */
+.member {
+  padding-right: 10px;
+  position: relative; }
+
+/* the typable area "form" */
+.message-form {
+  display: flex;
+  flex-shrink: 0; }
+
+/* the typed text in the "form" */
+.message-form__input {
+  flex-grow: 1;
+  border: 1px solid #16bb00;
+  padding: 10px 15px;
+  font-size: 16px; }
+
+/* the send btn */
+.message-form__button {
+  margin: 10px; }
+
+.logout-button {
+  margin-top: 15px; }
+
+/*# sourceMappingURL=style.css.map */

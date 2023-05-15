@@ -4,22 +4,26 @@
     <!--<script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>-->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style/login.css" />
     <title>Login</title>
     <script
       type="text/javascript"
       src="https://cdn.scaledrone.com/scaledrone.min.js"
     ></script>
-    <style></style>
   </head>
   <body>
+    <div class="background">
+      <div class="shape" id="shape1"></div>
+      <div class="shape" id="shape2"></div>
+    </div>
     <form id="login-form">
+      <h3>Login Here</h3>
       <label for="name">Enter your name:</label>
-      <input type="text" id="name" name="name" />
+      <input type="text" id="name" placeholder="Chat name..." name="name" />
       <button type="submit">Join chatroom</button>
     </form>
     <!-- SCRIPT -->
-    <script src="./login.js"></script>
+    <script src="./script/login.js"></script>
   </body>
 </html>
 <!-- NOTE: Updated naming: login.html is now index.html, index.html is chatapp.html -->

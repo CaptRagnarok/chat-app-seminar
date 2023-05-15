@@ -1,3 +1,10 @@
+//-----------------------
+// IMPORTS
+//-----------------------
+@import 'base/reset';
+@import 'base/colors';
+@import 'abstracts/mixins.scss';
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -8,6 +15,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* First three rows */
 .members-count,
 .members-list,
 .messages {
@@ -16,33 +24,46 @@ body {
   margin-bottom: 15px;
 }
 
+/* 3rd row div, where msgs go */
 .messages {
   flex-shrink: 1;
   overflow: auto;
 }
 
+/* msg content (once any msgs exist) */
 .message {
   padding: 5px 0;
 }
+
+/* member name next to a posted msg */
 .message .member {
   display: inline-block;
 }
 
+/* member in the members-list */
 .member {
   padding-right: 10px;
   position: relative;
 }
 
+/* the typable area "form" */
 .message-form {
   display: flex;
   flex-shrink: 0;
 }
+
+/* the typed text in the "form" */
 .message-form__input {
   flex-grow: 1;
-  border: 1px solid #dfdfdf;
+  border: 1px solid #16bb00;
   padding: 10px 15px;
   font-size: 16px;
 }
+
+/* the send btn */
 .message-form__button {
   margin: 10px;
+}
+.logout-button {
+  margin-top: 15px;
 }

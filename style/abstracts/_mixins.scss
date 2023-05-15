@@ -1,0 +1,39 @@
+//------------------
+// BASE FUNCTION
+//------------------
+
+@mixin center-div {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+@mixin btn {
+  background-color: $clr-wt;
+  color: $clr-bk;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+//------------------
+// LOGIN DESIGN
+//------------------
+
+@mixin border_n_shadow {
+  border-radius: 10px;
+  border: 2px solid $clr-gray-brd;
+  box-shadow: $shadow;
+}
+@mixin blur {
+  backdrop-filter: blur(10px);
+}
+
+//-------------------
+// FORMS
+//-------------------
+@mixin form-reset {
+  outline: none;
+  border: none;
+}
