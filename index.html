@@ -19,7 +19,15 @@
     <form id="login-form">
       <h3>Login Here</h3>
       <label for="name">Enter your name:</label>
-      <input type="text" id="name" placeholder="Chat name..." name="name" />
+      <input
+        type="text"
+        id="name"
+        placeholder="Chat name..."
+        name="name"
+        required
+        oninput="InvalidMsg(this);"
+        oninvalid="InvalidMsg(this);"
+      />
       <button type="submit">Join chatroom</button>
     </form>
     <!-- SCRIPT -->

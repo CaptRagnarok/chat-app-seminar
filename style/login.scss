@@ -138,3 +138,7 @@ button:hover {
     box-sizing: 0 0 0 0;
   }
 }
+input:invalid + span {
+  color: red;
+  font-weight: bold;
+}

@@ -144,5 +144,8 @@ button:hover {
     box-shadow: 0 0 0 15px rgba(128, 0, 128, 0); }
   100% {
     box-sizing: 0 0 0 0; } }
+input:invalid + span {
+  color: red;
+  font-weight: bold; }
 
 /*# sourceMappingURL=login.css.map */

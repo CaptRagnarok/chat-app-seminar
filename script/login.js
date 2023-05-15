@@ -9,3 +9,15 @@ loginForm.addEventListener('submit', (e) => {
 
   window.location.href = './chatapp.html';
 });
+//-------------------
+// FORM FIELD
+//-------------------
+function InvalidMsg(textbox) {
+  if (textbox.value === '') {
+    textbox.setCustomValidity('You must enter a name to proceed');
+  } else {
+    textbox.setCustomValidity('');
+  }
+
+  return true;
+}
