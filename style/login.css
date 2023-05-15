@@ -1,9 +1,10 @@
 html {
   height: 100%;
+  width: 100vw;
   font-size: 16px;
+  box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  -moz-box-sizing: border-box; }
 
 *,
 *:before,
@@ -29,7 +30,8 @@ ul {
 
 body {
   height: 100%;
-  background: #080710; }
+  background: #080710;
+  border: 2px dotted red; }
 
 .background {
   width: 430px;

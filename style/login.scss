@@ -10,6 +10,7 @@
 body {
   height: 100%;
   background: $clr-bk;
+  border: 2px dotted red;
 }
 // background art code
 .background {
@@ -141,4 +142,11 @@ button:hover {
 input:invalid + span {
   color: red;
   font-weight: bold;
+}
+
+//--------------------
+// RESPONSIVE LAYOUT
+//--------------------
+@media screen and (min-width: 415px) {
+  // responsive layout goes here
 }
