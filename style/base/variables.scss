@@ -21,19 +21,21 @@ $clr-green-lt: #259d01;
 
 $gradient-1: linear-gradient(#cf8700, #f6e423);
 $gradient-2: linear-gradient(to left, #2d5e15, #259d01);
+
 // $gradient-3: linear-gradient(#1845ad, #23a2f6);
 // $gradient-4: linear-gradient(to left, #ff512f, #f09819);
-
-$shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 
 //-----------------------
 // TYPOGRAPHY
 //-----------------------
 
-$ft-login: 'Poppins', sans-serif;
+$fnt-login: 'Poppins', sans-serif;
 
 //-----------------------
 // DESIGN
 //-----------------------
+
+$shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+$shadow-animation: 0 0 0 15px $clr-bk;
 
 $transition: all 0.3s;

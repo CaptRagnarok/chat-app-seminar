@@ -14,7 +14,9 @@ loginForm.addEventListener('submit', (e) => {
 //-------------------
 function InvalidMsg(textbox) {
   if (textbox.value === '') {
-    textbox.setCustomValidity('You must enter a name to proceed');
+    textbox.setCustomValidity(
+      'YOU SHALL NOT PASS, without entering a name first!'
+    );
   } else {
     textbox.setCustomValidity('');
   }

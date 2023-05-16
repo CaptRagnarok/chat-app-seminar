@@ -134,17 +134,17 @@ button:hover {
   0% {
     box-shadow: 0 0 0 0 #f6e423; }
   70% {
-    box-shadow: 0 0 0 15px rgba(128, 0, 128, 0); }
+    box-shadow: 0 0 0 15px #080710; }
   100% {
     box-sizing: 0 0 0 0; } }
 @keyframes shape2 {
   0% {
     box-shadow: 0 0 0 0 #259d01; }
   70% {
-    box-shadow: 0 0 0 15px rgba(128, 0, 128, 0); }
+    box-shadow: 0 0 0 15px #080710; }
   100% {
     box-sizing: 0 0 0 0; } }
-@media screen and (min-width: 415px) {
+@media (min-width: 650px) {
   .background {
     width: 430px; }
 

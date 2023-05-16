@@ -1,8 +1,9 @@
 //---------------------
 // IMPORTS
 //---------------------
+
 @import 'base/reset';
-@import 'base/colors_typo';
+@import 'base/variables';
 @import 'abstracts/mixins.scss';
 
 //---------------------
@@ -63,7 +64,7 @@ form {
 form * {
   @include form-reset;
   color: $clr-wt;
-  font-family: $ft-login;
+  font-family: $fnt-login;
   letter-spacing: 0.5px;
 }
 form h3 {
@@ -106,9 +107,7 @@ button {
   font-weight: 600;
 }
 button:hover {
-  background-color: $clr-bk-95;
-  color: $clr-wt-90;
-  outline: 0.25px solid $clr-wt-90;
+  @include btn-hover;
 }
 
 //----------------------
@@ -120,7 +119,7 @@ button:hover {
     box-shadow: 0 0 0 0 $clr-yellow-lt;
   }
   70% {
-    box-shadow: 0 0 0 15px rgba(128, 0, 128, 0);
+    box-shadow: $shadow-animation;
   }
   100% {
     box-sizing: 0 0 0 0;
@@ -132,7 +131,7 @@ button:hover {
     box-shadow: 0 0 0 0 $clr-green-lt;
   }
   70% {
-    box-shadow: 0 0 0 15px rgba(128, 0, 128, 0);
+    box-shadow: $shadow-animation;
   }
   100% {
     box-sizing: 0 0 0 0;
@@ -142,8 +141,12 @@ button:hover {
 //--------------------
 // RESPONSIVE LAYOUT
 //--------------------
-@media screen and (min-width: 415px) {
-  // responsive layout goes here
+// Login has only one variation
+// Original is mobile
+
+// Larger screens
+
+@media (min-width: 650px) {
   .background {
     width: 430px;
   }
