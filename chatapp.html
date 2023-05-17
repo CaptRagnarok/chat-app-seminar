@@ -13,21 +13,33 @@
     ></script>
   </head>
   <body>
-    <div class="base-container">
+    <!--------------------------------
+           WRAPPER - ALL CONTENT 
+    --------------------------------->
+    <div class="app-wrapper">
+      <!-------------------------------- 
+                SIDEBAR section 
+        (member-#, logout, member-list ) 
+      --------------------------------->
       <div class="sidebar">
-        <div class="sidebar-1">
+        <!-- member-#, logout section -->
+        <div class="topbar">
           <div class="members-count"></div>
           <div class="logout">
             <button class="logout-button" value="Logout">Logout</button>
           </div>
         </div>
+        <!-- member-list section -->
         <div class="members-list"></div>
       </div>
+      <!-------- END OF SIDEBAR -------->
 
-      <div class="main">
-        <!-- MESSAGE AREA -->
-        <!-- sent msgs -->
+      <!----------------------------------
+                  MESSAGE AREA 
+        --------------------------------->
+      <div class="message-section">
         <div class="messages">
+          <!-- sent msgs go here -->
           <div id="emoji-picker">
             <div class="emoji">🙂</div>
             <div class="emoji">😊</div>
@@ -72,6 +84,7 @@
             <!-- Add more emojis here -->
           </div>
         </div>
+
         <!-- msg input -->
         <form class="message-form" onsubmit="return false;">
           <input
@@ -79,11 +92,17 @@
             placeholder="Type a message.."
             type="text"
           />
+
+          <!-- send button -->
           <input class="message-form__button" value="Send" type="submit" />
+
+          <!-- emoji button -->
           <button id="emoji-picker-btn">😎</button>
         </form>
       </div>
+      <!-- END OF MESSAGE AREA -->
     </div>
+    <!-- END OF WRAPPER - ALL CONTENT -->
 
     <!-- SCRIPT -->
     <script src="./script/script.js"></script>

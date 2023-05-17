@@ -11,15 +11,6 @@
 // * {
 //   border: 2px dotted red;
 // }
-#emoji-picker {
-  display: flex;
-  justify-content: space-around;
-  background: #007fe7;
-  position: fixed;
-  width: 350px;
-  bottom: 12%;
-  right: 2%;
-}
 
 //-----------------------
 // GENERAL
@@ -41,11 +32,59 @@ body {
   border: 1px solid #e4e4e4;
   padding: 15px;
   margin-bottom: 15px;
-  height: 100%;
+}
+//-----------------------
+// MAIN STRUCTURE
+//-----------------------
+
+.app-wrapper {
+  display: flex;
+  height: 95vh;
 }
 
+//-----------------------
+// SIDEBAR SECTION
+//-----------------------
+.sidebar {
+  width: 20%;
+  border: 1px solid #e4e4e4;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+.members-list {
+  max-height: 93%;
+  display: flex;
+  flex-direction: column;
+}
+.members-list .member {
+  border: 1.5px solid black;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: gray;
+  border-radius: 4%;
+}
+/* member in the members-list */
+.member {
+  padding-right: 10px;
+  position: relative;
+  display: inline;
+}
+//-----------------------
+// MESSAGE SECTION
+//-----------------------
+.message-section {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 /* 3rd row div, where msgs go */
 .messages {
+  height: 100%;
   flex-shrink: 1; //is this needed
   overflow: auto;
   display: flex;
@@ -61,16 +100,7 @@ body {
   padding: 10px 10px;
   border-radius: 10%;
 }
-.message-timestamp {
-  font-size: 12px;
-  text-align: right;
-  padding-top: 4px;
-}
-.message-content {
-  padding-top: 3px;
-  font-size: 18px;
-}
-.current-user-message {
+.my-message {
   align-self: flex-end;
   background-color: rgba($color: #dfdfdf, $alpha: 0.5);
   margin: 10px;
@@ -78,25 +108,25 @@ body {
   border-radius: 10%;
   //newcode
 }
-
-/* member name next to a posted msg */
-.message .member {
-  display: inline-block;
+.message-content {
+  padding-top: 3px;
+  font-size: 18px;
 }
-
-/* member in the members-list */
-.member {
-  padding-right: 10px;
-  position: relative;
-  display: inline;
+.message-timestamp {
+  font-size: 12px;
+  text-align: right;
+  padding-top: 4px;
 }
-
+.status-message {
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+}
 /* the typable area "form" */
 .message-form {
   display: flex;
   flex-shrink: 2;
 }
-
 /* the typed text in the "form" */
 .message-form__input {
   flex-grow: 1;
@@ -104,10 +134,18 @@ body {
   padding: 10px 15px;
   font-size: 16px;
 }
+
 //-----------------------
 // BUTTONS
 //-----------------------
 
+// transforms cursor into pointer for all btns
+#emoji-picker,
+#emoji-picker-btn,
+.logout-button,
+.message-form__button {
+  cursor: pointer;
+}
 /* the send btn */
 .message-form__button {
   margin: 10px;
@@ -115,13 +153,6 @@ body {
 // the logout button
 .logout-button {
   margin-top: 15px;
-}
-// transforms cursor into pointer for all btns
-#emoji-picker,
-#emoji-picker-btn,
-.logout-button,
-.message-form__button {
-  cursor: pointer;
 }
 
 //-----------------------
@@ -132,6 +163,13 @@ body {
 #emoji-picker {
   display: none;
   flex-wrap: wrap;
+  justify-content: space-around;
+  background: #007fe7;
+  position: fixed;
+  width: 350px;
+  bottom: 12%;
+  right: 2%;
+  border-radius: 5%;
 }
 // single emoji div
 .emoji {
@@ -144,48 +182,4 @@ body {
     padding: 10px 1px;
     background: #7ec3fc;
   }
-}
-.first-column {
-  display: flex;
-  justify-content: stretch;
-}
-
-// test code
-.base-container {
-  display: flex;
-  height: 95vh;
-}
-.sidebar {
-  width: 20%;
-  border: 1px solid #e4e4e4;
-}
-.main {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.sidebar-1 {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 5px;
-}
-.status-message {
-  text-align: center;
-  font-weight: bold;
-  font-style: italic;
-}
-.members-list {
-  max-height: 93%;
-  display: flex;
-  flex-direction: column;
-}
-.members-list .member {
-  border: 1.5px solid black;
-  text-align: center;
-  padding: 10px;
-  margin-bottom: 10px;
-  background: gray;
-  border-radius: 4%;
-  // border-radius: 20%;
 }

@@ -149,7 +149,7 @@ function createMessageElement(text, member) {
 
   // differentiate from current user
   if (member.id === drone.clientId) {
-    el.className = 'current-user-message';
+    el.className = 'my-message';
   }
 
   // el.appendChild(document.createTextNode(textWithEmojis)); THIS MADE DOUBLE TEXT
