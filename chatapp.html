@@ -13,65 +13,78 @@
     ></script>
   </head>
   <body>
-    <div class="first-column">
-      <div class="members-count"></div>
-      <div class="members-list"></div>
-      <div class="logout">
-        <button class="logout-button" value="Logout">Logout</button>
+    <div class="base-container">
+      <div class="sidebar">
+        <div class="sidebar-1">
+          <div class="members-count"></div>
+          <div class="logout">
+            <button class="logout-button" value="Logout">Logout</button>
+          </div>
+        </div>
+        <div class="members-list"></div>
+      </div>
+
+      <div class="main">
+        <!-- MESSAGE AREA -->
+        <!-- sent msgs -->
+        <div class="messages">
+          <div id="emoji-picker">
+            <div class="emoji">🙂</div>
+            <div class="emoji">😊</div>
+            <div class="emoji">😀</div>
+            <div class="emoji">😎</div>
+            <div class="emoji">😅</div>
+            <div class="emoji">🤣</div>
+            <div class="emoji">😂</div>
+            <div class="emoji">🙃</div>
+            <div class="emoji">😉</div>
+            <div class="emoji">😋</div>
+            <div class="emoji">😛</div>
+            <div class="emoji">😜</div>
+            <div class="emoji">🤗</div>
+            <div class="emoji">😐</div>
+            <div class="emoji">🤐</div>
+            <div class="emoji">🤨</div>
+            <div class="emoji">😑</div>
+            <div class="emoji">😶</div>
+            <div class="emoji">😏</div>
+            <div class="emoji">😒</div>
+            <div class="emoji">🙄</div>
+            <div class="emoji">😴</div>
+            <div class="emoji">😨</div>
+            <div class="emoji">😥</div>
+            <div class="emoji">😢</div>
+            <div class="emoji">😤</div>
+            <div class="emoji">😡</div>
+            <div class="emoji">💀</div>
+            <div class="emoji">💗</div>
+            <div class="emoji">💔</div>
+            <div class="emoji">💚</div>
+            <div class="emoji">💙</div>
+            <div class="emoji">🤍</div>
+            <div class="emoji">🖤</div>
+            <div class="emoji">👋</div>
+            <div class="emoji">🖖</div>
+            <div class="emoji">👍</div>
+            <div class="emoji">👎</div>
+            <div class="emoji">🙏</div>
+            <div class="emoji">💪</div>
+            <!-- Add more emojis here -->
+          </div>
+        </div>
+        <!-- msg input -->
+        <form class="message-form" onsubmit="return false;">
+          <input
+            class="message-form__input"
+            placeholder="Type a message.."
+            type="text"
+          />
+          <input class="message-form__button" value="Send" type="submit" />
+          <button id="emoji-picker-btn">😎</button>
+        </form>
       </div>
     </div>
 
-    <!-- MESSAGE AREA -->
-    <div class="messages"></div>
-    <form class="message-form" onsubmit="return false;">
-      <input
-        class="message-form__input"
-        placeholder="Type a message.."
-        type="text"
-      />
-      <input class="message-form__button" value="Send" type="submit" />
-    </form>
-    <button id="emoji-picker-btn">😎</button>
-    <div id="emoji-picker">
-      <div class="emoji">🙂</div>
-      <div class="emoji">😊</div>
-      <div class="emoji">😀</div>
-      <div class="emoji">😎</div>
-      <div class="emoji">😅</div>
-      <div class="emoji">🤣</div>
-      <div class="emoji">😂</div>
-      <div class="emoji">🙃</div>
-      <div class="emoji">😉</div>
-      <div class="emoji">😋</div>
-      <div class="emoji">😛</div>
-      <div class="emoji">😜</div>
-      <div class="emoji">🤗</div>
-      <div class="emoji">😐</div>
-      <div class="emoji">🤐</div>
-      <div class="emoji">🤨</div>
-      <div class="emoji">😑</div>
-      <div class="emoji">😶</div>
-      <div class="emoji">😏</div>
-      <div class="emoji">😒</div>
-      <div class="emoji">🙄</div>
-      <div class="emoji">😴</div>
-      <div class="emoji">😨</div>
-      <div class="emoji">😥</div>
-      <div class="emoji">😢</div>
-      <div class="emoji">😤</div>
-      <div class="emoji">😡</div>
-      <div class="emoji">💀</div>
-      <div class="emoji">💗</div>
-      <div class="emoji">💔</div>
-      <div class="emoji">🤍</div>
-      <div class="emoji">👋</div>
-      <div class="emoji">🖖</div>
-      <div class="emoji">👍</div>
-      <div class="emoji">👎</div>
-      <div class="emoji">🙏</div>
-      <div class="emoji">💪</div>
-      <!-- Add more emojis here -->
-    </div>
     <!-- SCRIPT -->
     <script src="./script/script.js"></script>
   </body>

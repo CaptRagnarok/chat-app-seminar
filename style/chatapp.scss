@@ -11,6 +11,15 @@
 // * {
 //   border: 2px dotted red;
 // }
+#emoji-picker {
+  display: flex;
+  justify-content: space-around;
+  background: #007fe7;
+  position: fixed;
+  width: 350px;
+  bottom: 12%;
+  right: 2%;
+}
 
 //-----------------------
 // GENERAL
@@ -32,6 +41,7 @@ body {
   border: 1px solid #e4e4e4;
   padding: 15px;
   margin-bottom: 15px;
+  height: 100%;
 }
 
 /* 3rd row div, where msgs go */
@@ -126,14 +136,56 @@ body {
 // single emoji div
 .emoji {
   padding: 10px 1px;
+  width: 40px;
   font-size: 22px;
+  text-align: center;
 
   &:hover {
     padding: 10px 1px;
-    background: blue;
+    background: #7ec3fc;
   }
 }
 .first-column {
   display: flex;
+  justify-content: stretch;
+}
+
+// test code
+.base-container {
+  display: flex;
+  height: 95vh;
+}
+.sidebar {
+  width: 20%;
+  border: 1px solid #e4e4e4;
+}
+.main {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
+}
+.sidebar-1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+.status-message {
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+}
+.members-list {
+  max-height: 93%;
+  display: flex;
+  flex-direction: column;
+}
+.members-list .member {
+  border: 1.5px solid black;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: gray;
+  border-radius: 4%;
+  // border-radius: 20%;
 }
