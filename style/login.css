@@ -3,12 +3,14 @@ html {
   font-size: 16px;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; }
+  -moz-box-sizing: border-box;
+}
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 body,
 h1,
@@ -22,14 +24,17 @@ ol,
 ul {
   margin: 0;
   padding: 0;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
 ul {
-  list-style-type: none; }
+  list-style-type: none;
+}
 
 body {
   height: 100%;
-  background: #080710; }
+  background: #080710;
+}
 
 .background {
   width: 360px;
@@ -37,35 +42,42 @@ body {
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
-  top: 50%; }
+  top: 50%;
+}
 
 .background .shape {
   height: 100px;
   width: 100px;
   position: absolute;
-  border-radius: 50%; }
+  border-radius: 50%;
+}
 
 .shape:first-child {
   background: linear-gradient(#cf8700, #f6e423);
   left: 250px;
-  top: 0; }
+  top: 0;
+}
 
 .shape:last-child {
   background: linear-gradient(to left, #2d5e15, #259d01);
   right: 240px;
-  bottom: -10px; }
+  bottom: -10px;
+}
 
 body:has(button:hover) .shape:first-child {
-  animation: shape1 1.5s infinite ease-in-out; }
+  animation: shape1 1.5s infinite ease-in-out;
+}
 
 body:has(button:hover) .shape:last-child {
-  animation: shape2 1.5s infinite ease-in-out; }
+  animation: shape2 1.5s infinite ease-in-out;
+}
 
 form {
   border-radius: 10px;
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -73,7 +85,8 @@ form {
   background-color: rgba(255, 255, 255, 0.13);
   height: 420px;
   width: 280px;
-  padding: 50px 35px; }
+  padding: 50px 35px;
+}
 
 /* targets descendants */
 form * {
@@ -81,19 +94,22 @@ form * {
   border: none;
   color: #fff;
   font-family: "Poppins", sans-serif;
-  letter-spacing: 0.5px; }
+  letter-spacing: 0.5px;
+}
 
 form h3 {
   font-size: 32px;
   font-weight: 500;
   line-height: 42px;
-  text-align: center; }
+  text-align: center;
+}
 
 label {
   display: block;
   margin-top: 30px;
   font-size: 16px;
-  font-weight: 500; }
+  font-weight: 500;
+}
 
 input {
   background-color: rgba(255, 255, 255, 0.07);
@@ -104,14 +120,27 @@ input {
   padding: 0 10px;
   margin-top: 10px;
   font-size: 14px;
-  font-weight: 300; }
+  font-weight: 300;
+}
+
+input::-moz-placeholder {
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #e6e6e6;
+}
 
 input::placeholder {
   transition: all 0.3s;
-  color: #e6e6e6; }
+  color: #e6e6e6;
+}
+
+input:focus::-moz-placeholder {
+  color: #999999;
+}
 
 input:focus::placeholder {
-  color: #999999; }
+  color: #999999;
+}
 
 button {
   background-color: #fff;
@@ -123,47 +152,57 @@ button {
   width: 100%;
   padding: 15px 0;
   font-size: 18px;
-  font-weight: 600; }
+  font-weight: 600;
+}
 
 button:hover {
   background-color: #1e1d24;
   color: #e6e6e6;
-  outline: 0.25px solid #e6e6e6; }
+  outline: 0.25px solid #e6e6e6;
+}
 
 @keyframes shape1 {
   0% {
-    box-shadow: 0 0 0 0 #f6e423; }
+    box-shadow: 0 0 0 0 #f6e423;
+  }
   70% {
-    box-shadow: 0 0 0 15px #080710; }
+    box-shadow: 0 0 0 15px #080710;
+  }
   100% {
-    box-sizing: 0 0 0 0; } }
+    box-sizing: 0 0 0 0;
+  }
+}
 @keyframes shape2 {
   0% {
-    box-shadow: 0 0 0 0 #259d01; }
+    box-shadow: 0 0 0 0 #259d01;
+  }
   70% {
-    box-shadow: 0 0 0 15px #080710; }
+    box-shadow: 0 0 0 15px #080710;
+  }
   100% {
-    box-sizing: 0 0 0 0; } }
+    box-sizing: 0 0 0 0;
+  }
+}
 @media (min-width: 650px) {
   .background {
-    width: 430px; }
-
+    width: 430px;
+  }
   .background .shape {
     height: 200px;
-    width: 200px; }
-
+    width: 200px;
+  }
   form {
     height: 420px;
-    width: 430px; }
-
+    width: 430px;
+  }
   .shape:first-child {
     background: linear-gradient(#cf8700, #f6e423);
     left: 320px;
-    top: -80px; }
-
+    top: -80px;
+  }
   .shape:last-child {
     background: linear-gradient(to left, #2d5e15, #259d01);
     right: 270px;
-    bottom: -80px; } }
-
-/*# sourceMappingURL=login.css.map */
+    bottom: -80px;
+  }
+}/*# sourceMappingURL=login.css.map */

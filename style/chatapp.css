@@ -47,11 +47,20 @@ body {
 /* 3rd row div, where msgs go */
 .messages {
   flex-shrink: 1;
-  overflow: auto; }
+  overflow: auto;
+  display: flex;
+  flex-direction: column; }
 
 /* msg content (once any msgs exist) */
 .message {
   padding: 5px 0; }
+
+.current-user-message {
+  align-self: flex-end;
+  background-color: rgba(223, 223, 223, 0.5);
+  margin: 10px;
+  padding: 10px 10px;
+  border-radius: 10%; }
 
 /* member name next to a posted msg */
 .message .member {
@@ -60,12 +69,13 @@ body {
 /* member in the members-list */
 .member {
   padding-right: 10px;
-  position: relative; }
+  position: relative;
+  display: inline; }
 
 /* the typable area "form" */
 .message-form {
   display: flex;
-  flex-shrink: 0; }
+  flex-shrink: 2; }
 
 /* the typed text in the "form" */
 .message-form__input {
@@ -80,5 +90,25 @@ body {
 
 .logout-button {
   margin-top: 15px; }
+
+#emoji-picker,
+#emoji-picker-btn,
+.logout-button,
+.message-form__button {
+  cursor: pointer; }
+
+#emoji-picker {
+  display: none;
+  flex-wrap: wrap; }
+
+.emoji {
+  padding: 10px 1px; }
+  .emoji:hover {
+    padding: 10px 1px;
+    background: blue; }
+
+.first-column {
+  display: flex;
+  justify-content: space-between; }
 
 /*# sourceMappingURL=chatapp.css.map */

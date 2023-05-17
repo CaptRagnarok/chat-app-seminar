@@ -5,6 +5,16 @@
 @import 'base/variables';
 @import 'abstracts/mixins.scss';
 
+//-----------------------
+// DEBUG
+//-----------------------
+// * {
+//   border: 2px dotted red;
+// }
+
+//-----------------------
+// GENERAL
+//-----------------------
 body {
   box-sizing: border-box;
   margin: 0;
@@ -26,13 +36,23 @@ body {
 
 /* 3rd row div, where msgs go */
 .messages {
-  flex-shrink: 1;
+  flex-shrink: 1; //is this needed
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 /* msg content (once any msgs exist) */
 .message {
   padding: 5px 0;
+}
+.current-user-message {
+  align-self: flex-end;
+  background-color: rgba($color: #dfdfdf, $alpha: 0.5);
+  //newcode
+  margin: 10px;
+  padding: 10px 10px;
+  border-radius: 10%;
 }
 
 /* member name next to a posted msg */
@@ -44,12 +64,13 @@ body {
 .member {
   padding-right: 10px;
   position: relative;
+  display: inline;
 }
 
 /* the typable area "form" */
 .message-form {
   display: flex;
-  flex-shrink: 0;
+  flex-shrink: 2;
 }
 
 /* the typed text in the "form" */
@@ -59,11 +80,45 @@ body {
   padding: 10px 15px;
   font-size: 16px;
 }
+//-----------------------
+// BUTTONS
+//-----------------------
 
 /* the send btn */
 .message-form__button {
   margin: 10px;
 }
+// the logout button
 .logout-button {
   margin-top: 15px;
+}
+// transforms cursor into pointer for all btns
+#emoji-picker,
+#emoji-picker-btn,
+.logout-button,
+.message-form__button {
+  cursor: pointer;
+}
+
+//-----------------------
+// EMOJI AREA
+//-----------------------
+
+// emoji div
+#emoji-picker {
+  display: none;
+  flex-wrap: wrap;
+}
+// single emoji div
+.emoji {
+  padding: 10px 1px;
+
+  &:hover {
+    padding: 10px 1px;
+    background: blue;
+  }
+}
+.first-column {
+  display: flex;
+  justify-content: space-between;
 }
