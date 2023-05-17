@@ -8,6 +8,11 @@ Designed to be a working chat app using the _Scaledrone API_ for functionality.
 
 ## Changelog
 
+### 0.4.2
+
+- Initialized final layout (basic level for Desktop)
+- Small code cleanup in scss
+
 ### 0.4.1
 
 - Added info messages when a member enters/leaves chat.
