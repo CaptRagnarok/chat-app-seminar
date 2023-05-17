@@ -8,6 +8,19 @@ Designed to be a working chat app using the _Scaledrone API_ for functionality.
 
 ## Changelog
 
+### 0.4.1
+
+- Added info messages when a member enters/leaves chat.
+- Added timestamp to chat messages
+- Other users now also have a chat color
+
+### 0.4.0
+
+- Current chat users will now have a different color from the rest of the chat participants
+- Added emoji support
+  - Can be accessed via it's own button box
+  - Can also be accessed by typing in most common emoji text ("smileyface", :flex:, :thumbsup:, etc.)
+
 ### 0.3.6
 
 - Added this readme

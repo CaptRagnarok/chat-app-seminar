@@ -51,12 +51,17 @@ drone.on('open', (error) => {
   room.on('member_join', (member) => {
     members.push(member);
     updateMembersDOM();
+    displayStatusMessage(`${member.clientData.name} has joined the chat.`);
   });
 
   room.on('member_leave', ({ id }) => {
     const index = members.findIndex((member) => member.id === id);
-    members.splice(index, 1);
-    updateMembersDOM();
+    if (index !== -1) {
+      const member = members[index];
+      members.splice(index, 1);
+      updateMembersDOM();
+      displayStatusMessage(`${member.clientData.name} has left the chat.`);
+    }
   });
 
   room.on('data', (text, member) => {
@@ -127,20 +132,32 @@ function updateMembersDOM() {
 
 function createMessageElement(text, member) {
   const el = document.createElement('div');
-  el.appendChild(createMemberElement(member));
+  el.className = 'message';
 
-  // emoji support
-  const textWithEmojis = replaceEmojisWithUnicode(text);
-  el.appendChild(document.createTextNode(textWithEmojis));
+  const messageContent = document.createElement('div');
+  messageContent.className = 'message-content';
+  messageContent.innerHTML = replaceEmojisWithUnicode(text);
+
+  const timestamp = document.createElement('div');
+  timestamp.className = 'message-timestamp';
+  timestamp.textContent = getCurrentTimestamp();
+
+  el.appendChild(createMemberElement(member));
+  el.appendChild(messageContent);
+  el.appendChild(timestamp);
+  // messageContent.appendChild(document.createTextNode(text)); SEEMS LIKE I DON'T NEED THIS ANYMORE
 
   // differentiate from current user
   if (member.id === drone.clientId) {
-    el.className = 'current-user-message message';
-  } else {
-    el.className = 'message';
+    el.className = 'current-user-message';
   }
-  console.log('MemberID: ', member.id);
-  console.log('ClientID: ', drone.clientId);
+
+  // el.appendChild(document.createTextNode(textWithEmojis)); THIS MADE DOUBLE TEXT
+
+  // checks for IDs, only for testing purposes
+
+  // console.log('MemberID: ', member.id);
+  // console.log('ClientID: ', drone.clientId);
 
   return el;
 }
@@ -152,6 +169,23 @@ function addMessageToListDOM(text, member) {
   if (wasTop) {
     el.scrollTop = el.scrollHeight - el.clientHeight;
   }
+}
+
+// function for "user has joined/left the chat"
+function displayStatusMessage(message) {
+  const el = document.createElement('div');
+  el.textContent = message;
+  el.className = 'status-message';
+  DOM.messages.appendChild(el);
+  DOM.messages.scrollTop = DOM.messages.scrollHeight;
+}
+
+// controls the timestamp in messages
+function getCurrentTimestamp() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  return `${hours}:${minutes}`;
 }
 
 //----------------------------------
@@ -181,7 +215,6 @@ function replaceEmojisWithUnicode(text) {
       emojiMap[emoji]
     );
   });
-
   return replacedText;
 }
 
@@ -189,9 +222,9 @@ function replaceEmojisWithUnicode(text) {
 function escapeRegExp(string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
-
+//-----------------------------
 // AUTOMATED EMOJI PICKER
-//-*---------------------------
+//-----------------------------
 
 // defines emoji picker button and div
 const emojiPickerBtn = document.getElementById('emoji-picker-btn');
@@ -208,7 +241,9 @@ emojiPicker.addEventListener('click', (event) => {
   const emoji = event.target.textContent;
   if (emoji) {
     insertEmoji(emoji);
-    emojiPicker.style.display = 'none';
+
+    //refocuses on input field
+    DOM.input.focus();
   }
 });
 
@@ -216,6 +251,7 @@ emojiPicker.addEventListener('click', (event) => {
 document.addEventListener('click', (event) => {
   const isEmojiPickerClicked = emojiPicker.contains(event.target);
   const isEmojiButtonClicked = emojiPickerBtn.contains(event.target);
+
   if (!isEmojiPickerClicked && !isEmojiButtonClicked) {
     emojiPicker.style.display = 'none';
   }

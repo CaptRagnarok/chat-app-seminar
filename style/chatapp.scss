@@ -45,14 +45,28 @@ body {
 /* msg content (once any msgs exist) */
 .message {
   padding: 5px 0;
+  background-color: rgba($color: #0060af, $alpha: 0.5);
+  align-self: flex-start;
+  margin: 10px;
+  padding: 10px 10px;
+  border-radius: 10%;
+}
+.message-timestamp {
+  font-size: 12px;
+  text-align: right;
+  padding-top: 4px;
+}
+.message-content {
+  padding-top: 3px;
+  font-size: 18px;
 }
 .current-user-message {
   align-self: flex-end;
   background-color: rgba($color: #dfdfdf, $alpha: 0.5);
-  //newcode
   margin: 10px;
   padding: 10px 10px;
   border-radius: 10%;
+  //newcode
 }
 
 /* member name next to a posted msg */
@@ -112,6 +126,7 @@ body {
 // single emoji div
 .emoji {
   padding: 10px 1px;
+  font-size: 22px;
 
   &:hover {
     padding: 10px 1px;
