@@ -185,12 +185,4 @@ body {
     padding: 10px 1px;
     background: #7ec3fc; }
 
-@media (min-width: 650px) {
-  .online-section {
-    width: 30%;
-    position: block; }
-
-  .font-awesome {
-    display: none !important; } }
-
 /*# sourceMappingURL=chatapp.css.map */
