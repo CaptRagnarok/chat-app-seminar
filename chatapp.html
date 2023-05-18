@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width" />
     <title>Chatapp</title>
     <link rel="stylesheet" href="./style/chatapp.css" />
+    <script
+      src="https://kit.fontawesome.com/ca5e703c02.js"
+      crossorigin="anonymous"
+    ></script>
 
     <script
       type="text/javascript"
@@ -14,14 +18,18 @@
   </head>
   <body>
     <!--------------------------------
-           WRAPPER - ALL CONTENT 
+                   SIDEBAR
     --------------------------------->
-    <div class="app-wrapper">
+
+    <!--------------------------------
+        WRAPPER - ALL MAIN CONTENT 
+    --------------------------------->
+    <main class="app-wrapper">
       <!-------------------------------- 
-                SIDEBAR section 
+                ONLINE section 
         (member-#, logout, member-list ) 
       --------------------------------->
-      <div class="sidebar">
+      <div class="online-section online-section-fixed">
         <!-- member-#, logout section -->
         <div class="topbar">
           <div class="members-count"></div>
@@ -87,6 +95,7 @@
 
         <!-- msg input -->
         <form class="message-form" onsubmit="return false;">
+          <i class="fa-solid fa-bars font-awesome"></i>
           <input
             class="message-form__input"
             placeholder="Type a message.."
@@ -101,7 +110,7 @@
         </form>
       </div>
       <!-- END OF MESSAGE AREA -->
-    </div>
+    </main>
     <!-- END OF WRAPPER - ALL CONTENT -->
 
     <!-- SCRIPT -->

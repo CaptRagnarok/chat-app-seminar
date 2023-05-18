@@ -266,3 +266,39 @@ function insertEmoji(emoji) {
     value.slice(0, cursorPosition) + emoji + value.slice(cursorPosition);
   input.value = newValue;
 }
+//-----------------------------
+// SIDEBAR FUNCTIONALITY
+//-----------------------------
+const hamburger = document.querySelector('.font-awesome');
+const onlineSection = document.querySelector('.online-section');
+
+let menuOpen = false;
+
+function openMenu() {
+  menuOpen = true;
+  onlineSection.style.width = '60%';
+}
+
+function closeMenu() {
+  menuOpen = false;
+  onlineSection.style.width = '0';
+}
+
+function handleDocumentClick(event) {
+  const target = event.target;
+  const isOnlineSection = onlineSection.contains(target);
+  const isHamburger = hamburger.contains(target);
+
+  if (!isOnlineSection && !isHamburger) {
+    closeMenu();
+  }
+}
+
+hamburger.addEventListener('click', function () {
+  if (!menuOpen) {
+    openMenu();
+  } else {
+    closeMenu();
+  }
+});
+document.addEventListener('click', handleDocumentClick);

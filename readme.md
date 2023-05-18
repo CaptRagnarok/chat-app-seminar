@@ -8,6 +8,11 @@ Designed to be a working chat app using the _Scaledrone API_ for functionality.
 
 ## Changelog
 
+### 0.5.0
+
+- Added colapsible sidebar support for the mobile version
+- Futher code cleanup required
+
 ### 0.4.2
 
 - Initialized final layout (basic level for Desktop)
