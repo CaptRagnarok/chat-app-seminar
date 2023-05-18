@@ -105,6 +105,7 @@ body {
   height: 100%;
   flex-shrink: 1; //is this needed
   overflow: auto;
+  justify-content: flex-end;
 }
 
 /* msg content (once any msgs exist) */
@@ -142,9 +143,9 @@ body {
 .message-form {
   display: flex;
   align-self: center;
-  flex-shrink: 2;
+  // flex-shrink: 2;
   position: fixed;
-  width: 100%;
+  width: 95%; // fix this later
   padding: 0 20px;
   bottom: 10px;
 }
@@ -211,7 +212,7 @@ body {
 @media (min-width: 650px) {
   .online-section {
     width: 30%;
-    position: block;
+    position: initial;
   }
   .font-awesome {
     display: none !important;
