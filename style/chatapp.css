@@ -1,202 +1,68 @@
-html {
-  height: 100%;
-  min-height: -webkit-fill-available;
-  font-size: 16px;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; }
+/*
+Error: Invalid CSS after "  width: 100%%": expected expression (e.g. 1px, bold), was "; // fix this l..."
+        on line 148 of chatapp.scss
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit; }
+143: .message-form {
+144:   display: flex;
+145:   align-self: center;
+146:   flex-shrink: 2;
+147:   position: fixed;
+148:   width: 100%%; // fix this later
+149:   padding: 0 40px;
+150:   bottom: 10px;
+151: }
+152: /* the typed text in the "form" *\/
+153: .message-form__input {
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ol,
-ul {
-  margin: 0;
-  padding: 0;
-  font-weight: normal; }
-
-ul {
-  list-style-type: none; }
-
-body {
-  display: flex;
-  flex-direction: column;
-  padding: 13px;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
-
-/* First three rows */
-.members-count,
-.members-list,
-.messages {
-  border: 1px solid #e4e4e4;
-  padding: 15px;
-  margin-bottom: 15px; }
-
-.app-wrapper {
-  display: flex;
-  height: 100vh;
-  z-index: 0; }
-
-.font-awesome {
-  color: green;
-  text-align: center;
-  align-self: center;
-  padding: 10px;
-  margin-right: 10px;
-  background-color: gray; }
-
-.fa-bars {
-  color: red;
-  display: none; }
-
-.online-section {
-  height: 94.5vh;
-  width: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  overflow: hidden;
-  border: 1px solid #e4e4e4;
-  transition: all 0.5s ease; }
-
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 5px; }
-
-.members-list {
-  display: flex;
-  flex-direction: column;
-  max-height: 93%; }
-
-.members-list .member {
-  border: 1.5px solid black;
-  text-align: center;
-  padding: 10px;
-  margin-bottom: 10px;
-  background: rgba(223, 223, 223, 0.5);
-  border-radius: 4%; }
-
-/* member in the members-list */
-.member {
-  padding-right: 10px;
-  position: relative;
-  display: inline; }
-
-.message-section {
-  display: flex;
-  flex-direction: column;
-  height: 98vh;
-  width: 100%;
-  justify-content: space-between;
-  z-index: 1; }
-
-/* 3rd row div, where msgs go */
-.messages {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  flex-shrink: 1;
-  overflow: auto;
-  justify-content: flex-end; }
-
-/* msg content (once any msgs exist) */
-.message {
-  padding: 5px 0;
-  background-color: rgba(0, 96, 175, 0.5);
-  align-self: flex-start;
-  margin: 10px;
-  padding: 10px 10px;
-  border-radius: 10%; }
-
-.my-message {
-  align-self: flex-end;
-  background-color: rgba(223, 223, 223, 0.5);
-  margin: 10px;
-  padding: 10px 10px;
-  border-radius: 10%; }
-
-.message-content {
-  padding-top: 3px;
-  font-size: 18px; }
-
-.message-timestamp {
-  font-size: 12px;
-  text-align: right;
-  padding-top: 4px; }
-
-.status-message {
-  text-align: center;
-  font-weight: bold;
-  font-style: italic; }
-
-/* the typable area "form" */
-.message-form {
-  display: flex;
-  align-self: center;
-  flex-shrink: 2;
-  position: fixed;
-  width: 95%;
-  padding: 0 20px;
-  bottom: 10px; }
-
-/* the typed text in the "form" */
-.message-form__input {
-  flex-grow: 1;
-  border: 1px solid #16bb00;
-  padding: 10px 15px;
-  font-size: 16px; }
-
-#emoji-picker,
-#emoji-picker-btn,
-.logout-button,
-.message-form__button {
-  cursor: pointer; }
-
-/* the send btn */
-.message-form__button {
-  margin: 10px; }
-
-.logout-button {
-  margin-top: 15px; }
-
-#emoji-picker {
-  display: none;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  background: #007fe7;
-  position: fixed;
-  width: 350px;
-  bottom: 12%;
-  right: 2%;
-  border-radius: 5%; }
-
-.emoji {
-  padding: 10px 1px;
-  width: 40px;
-  font-size: 22px;
-  text-align: center; }
-  .emoji:hover {
-    padding: 10px 1px;
-    background: #7ec3fc; }
-
-@media (min-width: 650px) {
-  .online-section {
-    width: 30%;
-    position: initial; }
-
-  .font-awesome {
-    display: none !important; } }
-
-/*# sourceMappingURL=chatapp.css.map */
+Backtrace:
+chatapp.scss:148
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1308:in `expected'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/lexer.rb:240:in `expected!'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/parser.rb:855:in `assert_expr'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/parser.rb:284:in `times_div_or_mod'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/parser.rb:272:in `plus_or_minus'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/parser.rb:272:in `relational'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/parser.rb:272:in `eq_or_neq'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/parser.rb:272:in `and_expr'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/parser.rb:272:in `or_expr'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/parser.rb:481:in `space'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/parser.rb:422:in `interpolation'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/parser.rb:343:in `expr'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/parser.rb:853:in `assert_expr'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/script/parser.rb:68:in `parse'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1164:in `sass_script'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1002:in `value!'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:807:in `block in try_declaration'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:1284:in `rethrow'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:820:in `try_declaration'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:743:in `declaration_or_ruleset'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:708:in `block_child'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:700:in `block_contents'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:689:in `block'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:681:in `ruleset'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:707:in `block_child'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:700:in `block_contents'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:137:in `stylesheet'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/scss/parser.rb:41:in `parse'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/engine.rb:414:in `_to_tree'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:320:in `block in watch'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"  width: 100%%\": expected expression (e.g. 1px, bold), was \"; // fix this l...\"\A         on line 148 of chatapp.scss\A \A 143: .message-form {\A 144:   display: flex;\A 145:   align-self: center;\A 146:   flex-shrink: 2;\A 147:   position: fixed;\A 148:   width: 100%%; // fix this later\A 149:   padding: 0 40px;\A 150:   bottom: 10px;\A 151: }\A 152: /* the typed text in the \"form\" */\A 153: .message-form__input {"; }
