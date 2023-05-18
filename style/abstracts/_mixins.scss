@@ -43,3 +43,11 @@
   outline: none;
   border: none;
 }
+//------------------
+// RESPONSIVE DESIGN DESIGN
+//------------------
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
