@@ -301,4 +301,4 @@ hamburger.addEventListener('click', function () {
     closeMenu();
   }
 });
-document.addEventListener('click', handleDocumentClick);
+// document.addEventListener('click', handleDocumentClick); // closes sidebar when you click anywhere, but needs more work

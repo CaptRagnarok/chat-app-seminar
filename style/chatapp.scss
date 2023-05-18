@@ -18,7 +18,6 @@
 body {
   @include flex-column;
   padding: 13px;
-  max-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -44,7 +43,7 @@ body {
   text-align: center;
   align-self: center;
   padding: 10px;
-  margin: 0 10px;
+  margin-right: 10px;
   background-color: gray;
 }
 .fa-bars {
@@ -142,7 +141,12 @@ body {
 /* the typable area "form" */
 .message-form {
   display: flex;
+  align-self: center;
   flex-shrink: 2;
+  position: fixed;
+  width: 100%;
+  padding: 0 20px;
+  bottom: 10px;
 }
 /* the typed text in the "form" */
 .message-form__input {

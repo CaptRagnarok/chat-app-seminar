@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  min-height: -webkit-fill-available;
   font-size: 16px;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -27,14 +28,10 @@ ul {
 ul {
   list-style-type: none; }
 
-* {
-  outline: 2px dotted red; }
-
 body {
   display: flex;
   flex-direction: column;
   padding: 13px;
-  max-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
 
 /* First three rows */
@@ -55,7 +52,7 @@ body {
   text-align: center;
   align-self: center;
   padding: 10px;
-  margin: 0 10px;
+  margin-right: 10px;
   background-color: gray; }
 
 .fa-bars {
@@ -146,7 +143,12 @@ body {
 /* the typable area "form" */
 .message-form {
   display: flex;
-  flex-shrink: 2; }
+  align-self: center;
+  flex-shrink: 2;
+  position: fixed;
+  width: 100%;
+  padding: 0 20px;
+  bottom: 10px; }
 
 /* the typed text in the "form" */
 .message-form__input {
