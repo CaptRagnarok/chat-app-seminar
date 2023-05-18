@@ -147,7 +147,7 @@ body {
   align-self: center;
   flex-shrink: 2;
   position: fixed;
-  width: 90%;
+  width: 100%;
   bottom: 10px; }
 
 /* the typed text in the "form" */
