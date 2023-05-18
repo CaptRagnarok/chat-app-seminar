@@ -143,7 +143,7 @@ body {
 .message-form {
   display: flex;
   align-self: center;
-  // flex-shrink: 2;
+  flex-shrink: 2;
   position: fixed;
   width: 95%; // fix this later
   padding: 0 20px;

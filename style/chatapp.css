@@ -145,6 +145,7 @@ body {
 .message-form {
   display: flex;
   align-self: center;
+  flex-shrink: 2;
   position: fixed;
   width: 95%;
   padding: 0 20px;
