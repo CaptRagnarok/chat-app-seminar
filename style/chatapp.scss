@@ -182,6 +182,7 @@ body {
   position: fixed;
   bottom: 0;
   z-index: 3;
+  overflow-y: hidden;
 }
 .message-form__input {
   flex-grow: 1;
