@@ -76,7 +76,7 @@ body {
   bottom: 0.5px;
   overflow-x: hidden;
   /* or any other value */
-  overflow-y: auto;
+  overflow-y: hidden;
   /* or any other value */ }
 
 .font-awesome {
