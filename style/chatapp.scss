@@ -11,13 +11,33 @@
 // * {
 //   outline: 2px dotted red;
 // }
+// .app-wrapper {
+//   outline: 3px solid red;
+// }
+.message-section {
+  outline: 5px dotted red;
+}
+
+.messages {
+  outline: 2px dotted green;
+}
+.message-form {
+  outline: 2px dotted red;
+}
+.emoji-picker,
+.emoji-picker-btn,
+.font-awesome,
+.message-form__button {
+  outline: 2px dotted purple;
+}
 
 //-----------------------
 // GENERAL
 //-----------------------
 body {
   @include flex-column;
-  padding: 13px;
+  background-color: #7ec3fc;
+  // padding: 13px;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -27,7 +47,6 @@ body {
 .messages {
   border: 1px solid #e4e4e4;
   padding: 15px;
-  margin-bottom: 15px;
 }
 //-----------------------
 // MAIN STRUCTURE
@@ -35,7 +54,13 @@ body {
 
 .app-wrapper {
   display: flex;
-  height: 100vh; // find another solution later
+  justify-content: center;
+  background: gray;
+  margin: auto;
+  max-width: 1280px;
+  min-width: 360px;
+  width: 100%;
+  height: 85vh; // find another solution later
   z-index: 0;
 }
 .font-awesome {
@@ -48,18 +73,18 @@ body {
 }
 .fa-bars {
   color: red;
-  display: none;
 }
 //-----------------------
 // ONLINE SECTION
 //-----------------------
 .online-section {
-  height: 82.5vh; // check this
-  width: 0;
+  height: calc(100% - 50px);
+  width: 0px;
   position: fixed;
   top: 0;
-  left: 0;
+  left: -2px;
   z-index: 2;
+  background-color: peachpuff;
   overflow: hidden;
   border: 1px solid #e4e4e4;
   transition: all 0.5s ease;
@@ -84,7 +109,7 @@ body {
 }
 /* member in the members-list */
 .member {
-  padding-right: 10px;
+  // padding-right: 10px;
   position: relative;
   display: inline;
 }
@@ -94,9 +119,7 @@ body {
 //-----------------------
 .message-section {
   @include flex-column;
-  height: 98vh;
   width: 100%;
-  justify-content: space-between;
   z-index: 1;
 }
 /* 3rd row div, where msgs go */
@@ -110,7 +133,6 @@ body {
 
 /* msg content (once any msgs exist) */
 .message {
-  padding: 5px 0;
   background-color: rgba($color: #0060af, $alpha: 0.5);
   align-self: flex-start;
   margin: 10px;
@@ -142,14 +164,11 @@ body {
 /* the typable area "form" */
 .message-form {
   display: flex;
+  align-items: center;
   align-self: center;
   flex-shrink: 2;
-  position: fixed;
-  width: 100%; // fix this later
-  // padding: 0 40px;
-  bottom: 10px;
+  width: 100%;
 }
-/* the typed text in the "form" */
 .message-form__input {
   flex-grow: 1;
   border: 1px solid #16bb00;
@@ -192,6 +211,7 @@ body {
   bottom: 12%;
   right: 2%;
   border-radius: 5%;
+  z-index: 2;
 }
 // single emoji div
 .emoji {
@@ -212,7 +232,8 @@ body {
 @media (min-width: 650px) {
   .online-section {
     width: 30%;
-    position: initial;
+    position: static;
+    height: 100%;
   }
   .font-awesome {
     display: none !important;
