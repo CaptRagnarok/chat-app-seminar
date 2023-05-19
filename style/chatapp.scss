@@ -39,6 +39,7 @@ body {
   background-color: #7ec3fc;
   // padding: 13px;
   position: fixed;
+  overflow: hidden;
   top: 0;
   right: 0;
   left: 0;
@@ -129,11 +130,12 @@ body {
 }
 /* 3rd row div, where msgs go */
 .messages {
-  @include flex-column;
-  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100vh;
+  overflow-y: scroll;
+
   flex-shrink: 1; //is this needed
-  overflow: auto;
-  justify-content: flex-end;
   // accounts for fixed input msg area
   padding-bottom: 50px;
 }

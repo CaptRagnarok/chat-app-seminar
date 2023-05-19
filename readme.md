@@ -8,6 +8,12 @@ Designed to be a working chat app using the _Scaledrone API_ for functionality.
 
 ## Changelog
 
+### 0.6.0
+
+- Final (hopefully) layout fixes
+- "Message" area now supports scrolling
+- Chat input area cannot be scrolled under the virtual keyboard when using phones and tablets
+
 ### 0.5.2
 
 - Layout fixes

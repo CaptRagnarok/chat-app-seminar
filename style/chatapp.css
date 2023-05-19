@@ -51,6 +51,7 @@ body {
   flex-direction: column;
   background-color: #7ec3fc;
   position: fixed;
+  overflow: hidden;
   top: 0;
   right: 0;
   left: 0;
@@ -130,11 +131,10 @@ body {
 /* 3rd row div, where msgs go */
 .messages {
   display: flex;
-  flex-direction: column;
-  height: 100%;
+  flex-direction: column-reverse;
+  height: 100vh;
+  overflow-y: scroll;
   flex-shrink: 1;
-  overflow: auto;
-  justify-content: flex-end;
   padding-bottom: 50px; }
 
 /* msg content (once any msgs exist) */
