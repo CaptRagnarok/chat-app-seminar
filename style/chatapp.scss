@@ -173,6 +173,8 @@ body {
   align-self: center;
   flex-shrink: 2;
   width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 .message-form__input {
   flex-grow: 1;
@@ -242,5 +244,8 @@ body {
   }
   .font-awesome {
     display: none !important;
+  }
+  .message-form {
+    position: static;
   }
 }
