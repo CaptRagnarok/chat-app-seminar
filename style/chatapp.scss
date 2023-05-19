@@ -60,7 +60,7 @@ body {
   max-width: 1280px;
   min-width: 360px;
   width: 100%;
-  height: calc(100vh - calc(100vh - 100%)); // find another solution later
+  height: 100%; // find another solution later
   z-index: 0;
 }
 .font-awesome {
