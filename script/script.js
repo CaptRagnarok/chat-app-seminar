@@ -165,7 +165,9 @@ function createMessageElement(text, member) {
 function addMessageToListDOM(text, member) {
   const el = DOM.messages;
   const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight;
-  el.appendChild(createMessageElement(text, member));
+  // el.appendChild(createMessageElement(text, member));
+  // Using prepend because flex-end doesn't work with overflow:scroll, so this helps with ordering
+  el.prepend(createMessageElement(text, member));
   if (wasTop) {
     el.scrollTop = el.scrollHeight - el.clientHeight;
   }

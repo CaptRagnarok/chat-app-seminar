@@ -126,14 +126,16 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  z-index: 1; }
+  z-index: 1;
+  min-height: 0; }
 
 /* 3rd row div, where msgs go */
 .messages {
   display: flex;
+  flex-direction: column;
   flex-direction: column-reverse;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   flex-shrink: 1;
   padding-bottom: 50px; }
 

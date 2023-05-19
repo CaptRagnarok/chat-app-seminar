@@ -127,14 +127,15 @@ body {
   @include flex-column;
   width: 100%;
   z-index: 1;
+  min-height: 0;
 }
 /* 3rd row div, where msgs go */
 .messages {
-  display: flex;
+  @include flex-column;
   flex-direction: column-reverse;
+  // justify-content: flex-end;
   height: 100vh;
-  overflow-y: scroll;
-
+  overflow-y: auto;
   flex-shrink: 1; //is this needed
   // accounts for fixed input msg area
   padding-bottom: 50px;
@@ -156,6 +157,13 @@ body {
   border-radius: 10%;
   //newcode
 }
+// .messages .message:first-child {
+//   margin-left: auto;
+// }
+// .messages .message:first-child {
+//   margin-right: auto;
+// }
+
 .message-content {
   padding-top: 3px;
   font-size: 18px;
