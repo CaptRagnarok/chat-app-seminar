@@ -124,7 +124,6 @@ body {
 // MESSAGE SECTION
 //-----------------------
 .message-section {
-  position: relative;
   @include flex-column;
   width: 100%;
   z-index: 1;
