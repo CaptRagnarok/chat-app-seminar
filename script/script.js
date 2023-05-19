@@ -303,6 +303,14 @@ hamburger.addEventListener('click', function () {
 });
 // document.addEventListener('click', handleDocumentClick); // closes sidebar when you click anywhere, but needs more work
 
-document.body.addEventListener('touchmove', function (e) {
-  e.preventDefault();
+$(window).resize(function () {
+  var $htmlOrBody = $('html, body'), // scrollTop works on <body> for some browsers, <html> for others
+    scrollTopPadding = 8;
+  // get input tag's offset top position
+  var textareaTop = $(this).offset().top;
+  // scroll to the textarea
+  $htmlOrBody.scrollTop(textareaTop - scrollTopPadding);
+
+  // OR  To add animation for smooth scrolling, use this.
+  //$htmlOrBody.animate({ scrollTop: textareaTop - scrollTopPadding }, 200);
 });
