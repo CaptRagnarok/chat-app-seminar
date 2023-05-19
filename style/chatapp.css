@@ -134,7 +134,8 @@ body {
   height: 100%;
   flex-shrink: 1;
   overflow: auto;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  padding-bottom: 50px; }
 
 /* msg content (once any msgs exist) */
 .message {
@@ -225,6 +226,9 @@ body {
     display: none !important; }
 
   .message-form {
-    position: static; } }
+    position: static; }
+
+  .messages {
+    padding: 0; } }
 
 /*# sourceMappingURL=chatapp.css.map */

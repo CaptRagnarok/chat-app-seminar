@@ -134,6 +134,8 @@ body {
   flex-shrink: 1; //is this needed
   overflow: auto;
   justify-content: flex-end;
+  // accounts for fixed input msg area
+  padding-bottom: 50px;
 }
 
 /* msg content (once any msgs exist) */
@@ -173,6 +175,7 @@ body {
   align-self: center;
   flex-shrink: 2;
   width: 100%;
+  // fixes keyboard scroll
   position: fixed;
   bottom: 0;
 }
@@ -247,5 +250,8 @@ body {
   }
   .message-form {
     position: static;
+  }
+  .messages {
+    padding: 0;
   }
 }
