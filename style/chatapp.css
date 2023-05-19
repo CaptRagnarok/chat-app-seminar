@@ -123,6 +123,7 @@ body {
   display: inline; }
 
 .message-section {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -176,7 +177,8 @@ body {
   flex-shrink: 2;
   width: 100%;
   position: fixed;
-  bottom: 0; }
+  bottom: 0;
+  z-index: 3; }
 
 .message-form__input {
   flex-grow: 1;
