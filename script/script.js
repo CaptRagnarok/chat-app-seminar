@@ -302,9 +302,10 @@ hamburger.addEventListener('click', function () {
   }
 });
 // document.addEventListener('click', handleDocumentClick); // closes sidebar when you click anywhere, but needs more work
-window.addEventListener('load', function () {
-  setTimeout(function () {
-    // This hides the address bar:
-    window.scrollTo(0, 1);
-  }, 0);
-});
+
+const appWrapper = document.querySelector('.app-wrapper');
+appWrapper.style.height =
+  Math.max(
+    document.documentElement.clientHeight || 0,
+    window.innerHeight || 0
+  ) + 'px';
