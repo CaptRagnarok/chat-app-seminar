@@ -128,6 +128,7 @@ body {
   width: 100%;
   z-index: 1;
   min-height: 0;
+  overflow: hidden;
 }
 /* 3rd row div, where msgs go */
 .messages {
@@ -182,7 +183,6 @@ body {
   position: fixed;
   bottom: 0;
   z-index: 3;
-  overflow-y: hidden;
 }
 .message-form__input {
   flex-grow: 1;
