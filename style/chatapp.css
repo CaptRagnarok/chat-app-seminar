@@ -201,12 +201,15 @@ body {
 
 .hamburger-input {
   margin-right: 15px;
-  margin-left: 15px; }
+  margin-left: 30px; }
 
 .members-count {
   color: #e6e6e6;
   font-size: 18px;
   font-weight: bold; }
+
+.fa-paper-plane {
+  margin-right: 30px; }
 
 .message-form__input {
   flex-grow: 1;
@@ -215,9 +218,6 @@ body {
   padding: 10px 15px;
   margin: 0 10px;
   font-size: 16px; }
-
-.fa-paper-plane {
-  margin-right: 10px; }
 
 .message-form {
   position: fixed;
