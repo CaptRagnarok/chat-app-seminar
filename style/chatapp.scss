@@ -160,11 +160,12 @@ body {
 /* the typable area "form" */
 .message-form {
   @include position-fixed-input; // fixes keyboard scroll
-  padding: 5px 0;
+  padding: 5px 10px;
   display: flex;
+  flex-grow: 1;
   align-items: center;
   align-self: center;
-  width: 100%;
+  width: 100vw;
   background-color: $clr-bk;
 
   z-index: 3;

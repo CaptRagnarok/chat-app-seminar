@@ -181,11 +181,12 @@ body {
 .message-form {
   position: fixed;
   bottom: 0;
-  padding: 5px 0;
+  padding: 5px 10px;
   display: flex;
+  flex-grow: 1;
   align-items: center;
   align-self: center;
-  width: 100%;
+  width: 100vw;
   background-color: #080710;
   z-index: 3; }
 
