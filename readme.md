@@ -8,6 +8,14 @@ Designed to be a working chat app using the _Scaledrone API_ for functionality.
 
 ## Changelog
 
+### 0.6.5
+
+- Animated emoji picker (height transition)
+
+### 0.6.4
+
+- mixin optimization
+
 ### 0.6.3
 
 - fixed small bug where login/logout messages appeared above chat due to overflow: scroll fix (added prepend instead of append)

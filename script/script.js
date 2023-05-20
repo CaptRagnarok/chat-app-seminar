@@ -263,8 +263,9 @@ const emojiPicker = document.getElementById('emoji-picker');
 
 // handles opening and closing the picker div
 emojiPickerBtn.addEventListener('click', () => {
-  const emojiPickerDisplay = getComputedStyle(emojiPicker).display;
-  emojiPicker.style.display = emojiPickerDisplay === 'none' ? 'flex' : 'none';
+  emojiPicker.classList.toggle('visible');
+  // const emojiPickerDisplay = getComputedStyle(emojiPicker).display;
+  // emojiPicker.style.display = emojiPickerDisplay === 'none' ? 'flex' : 'none';
 });
 
 // inserts the selected emoji into the message input
@@ -284,7 +285,7 @@ document.addEventListener('click', (event) => {
   const isEmojiButtonClicked = emojiPickerBtn.contains(event.target);
 
   if (!isEmojiPickerClicked && !isEmojiButtonClicked) {
-    emojiPicker.style.display = 'none';
+    emojiPicker.classList.toggle('visible');
   }
 });
 

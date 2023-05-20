@@ -222,18 +222,21 @@ body {
 
 // emoji div
 #emoji-picker {
-  display: none;
-  // visibility: hidden;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   background: #007fe7;
   width: 350px;
+  height: 0;
   margin: 0 auto 50px auto;
   border-radius: 5%;
   z-index: 2;
+  // display: none;
+  overflow: hidden;
+  transition: $transition-02;
 }
-.animate-display {
-  animation: ani 500ms;
+#emoji-picker.visible {
+  height: 250px;
 }
 // single emoji div
 .emoji {
@@ -273,20 +276,4 @@ body {
   #emoji-picker {
     margin: 0 0 10px 10px;
   }
-}
-@keyframes ani {
-  from {
-    display: none;
-  }
-  to {
-    display: block;
-    opacity: 0;
-  }
-}
-.test {
-  height: 200px;
-  width: 200px;
-  // display: none;
-  background-color: #0060af;
-  animation: ani 200ms backwards;
 }
