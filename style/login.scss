@@ -39,10 +39,10 @@ body {
 }
 
 // targets circles on button hover
-body:has(button:hover) .shape:first-child {
+.shape:first-child {
   animation: shape1 1.5s infinite ease-in-out;
 }
-body:has(button:hover) .shape:last-child {
+body:has(button) .shape:last-child {
   animation: shape2 1.5s infinite ease-in-out;
 }
 
@@ -167,5 +167,12 @@ button:hover {
     background: $gradient-2;
     right: 270px;
     bottom: -80px;
+  }
+  // targets circles on button hover
+  body:has(button:hover) .shape:first-child {
+    animation: shape1 1.5s infinite ease-in-out;
+  }
+  body:has(button:hover) .shape:last-child {
+    animation: shape2 1.5s infinite ease-in-out;
   }
 }
