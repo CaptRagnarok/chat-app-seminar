@@ -8,6 +8,16 @@ Designed to be a working chat app using the _Scaledrone API_ for functionality.
 
 ## Changelog
 
+### 0.6.2
+
+- added additional icons (online counter area, emoji icon > added font-awesome icon)
+
+### 0.6.1
+
+- js code cleanup
+- start of the css design layout
+- replaced inputs and buttons with icons
+
 ### 0.6.0
 
 - Final (hopefully) layout fixes

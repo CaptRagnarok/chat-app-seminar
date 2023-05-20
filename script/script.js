@@ -149,7 +149,7 @@ function createMemberElement(member) {
 // Updates "Online" counter
 function updateMembersDOM() {
   //how many users in room
-  DOM.membersCount.innerText = `Online: ${members.length}`;
+  DOM.membersCount.innerText = `${members.length}`;
   DOM.membersList.innerHTML = '';
   members.forEach((member) =>
     DOM.membersList.appendChild(createMemberElement(member))

@@ -44,7 +44,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
 
 /* First three rows */
-.members-count,
+.member-count-wrapper,
 .members-list,
 .messages {
   border: 1px solid #e4e4e4;
@@ -88,6 +88,11 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0 5px; }
+
+.member-count-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center; }
 
 .members-list {
   display: flex;
