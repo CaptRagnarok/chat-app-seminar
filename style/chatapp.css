@@ -218,8 +218,6 @@ body {
 .message-form {
   position: fixed;
   bottom: 0;
-  left: auto;
-  right: auto;
   display: flex;
   flex-grow: 1;
   align-items: center;
