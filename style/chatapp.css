@@ -224,27 +224,34 @@ body {
 #emoji-picker {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   background: #007fe7;
-  width: 350px;
+  transition: all 0.5s ease;
+  column-gap: 3px;
   height: 0;
-  margin: 0 auto 50px auto;
-  border-radius: 5%;
-  z-index: 2;
+  width: 355px;
   overflow: hidden;
-  transition: all 0.5s ease; }
+  border-radius: 5%;
+  margin: 0 auto 50px auto;
+  z-index: 2; }
 
 #emoji-picker.visible {
   height: 250px; }
 
 .emoji {
-  padding: 10px 1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 96, 175, 0.5);
+  transition: all 0.3s;
+  height: 40px;
   width: 40px;
   font-size: 22px;
-  text-align: center; }
+  border-radius: 50%; }
   .emoji:hover {
-    padding: 10px 1px;
-    background: #7ec3fc; }
+    background: #1c2d3a; }
 
 @media (min-width: 650px) {
   .online-section {

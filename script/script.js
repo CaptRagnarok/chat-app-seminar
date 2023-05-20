@@ -285,7 +285,7 @@ document.addEventListener('click', (event) => {
   const isEmojiButtonClicked = emojiPickerBtn.contains(event.target);
 
   if (!isEmojiPickerClicked && !isEmojiButtonClicked) {
-    emojiPicker.classList.toggle('visible');
+    emojiPicker.classList.remove('visible');
   }
 });
 

@@ -51,13 +51,15 @@
   display: flex;
   flex-direction: column;
 }
-@mixin flex-column-reverse {
-  display: flex;
-  flex-direction: column-reverse;
-}
 @mixin flex-center {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+@mixin flex-emoji-picker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
 }
 @mixin position-fixed-center {

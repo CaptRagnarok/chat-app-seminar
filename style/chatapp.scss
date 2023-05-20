@@ -222,32 +222,34 @@ body {
 
 // emoji div
 #emoji-picker {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  @include flex-emoji-picker;
   background: #007fe7;
-  width: 350px;
-  height: 0;
-  margin: 0 auto 50px auto;
-  border-radius: 5%;
-  z-index: 2;
-  // display: none;
-  overflow: hidden;
   transition: $transition-02;
+  column-gap: 3px;
+  height: 0;
+  width: 355px;
+  overflow: hidden;
+  border-radius: 5%;
+  margin: 0 auto 50px auto;
+  z-index: 2;
 }
 #emoji-picker.visible {
   height: 250px;
 }
 // single emoji div
 .emoji {
-  padding: 10px 1px;
+  @include flex-emoji-picker;
+  background-color: rgba($color: #0060af, $alpha: 0.5);
+  transition: $transition;
+  height: 40px;
   width: 40px;
   font-size: 22px;
-  text-align: center;
+  border-radius: 50%;
 
   &:hover {
-    padding: 10px 1px;
-    background: #7ec3fc;
+    // padding: 10px 1px;
+    background: #1c2d3a;
+    // padding: 2px 2px;
   }
 }
 

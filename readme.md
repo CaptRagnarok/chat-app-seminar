@@ -8,6 +8,11 @@ Designed to be a working chat app using the _Scaledrone API_ for functionality.
 
 ## Changelog
 
+### 0.6.6
+
+- Further optimization of the emoji layout
+- Added hover effects
+
 ### 0.6.5
 
 - Animated emoji picker (height transition)
