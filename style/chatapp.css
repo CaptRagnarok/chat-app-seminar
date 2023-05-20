@@ -181,7 +181,7 @@ body {
 .message-form {
   position: fixed;
   bottom: 0;
-  padding: 5px 10px;
+  padding: 5px 15px;
   display: flex;
   align-items: center;
   align-self: center;
@@ -210,6 +210,9 @@ body {
 .font-awesome-input {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%; }
+
+.hamburger-input {
+  margin-right: 15px; }
 
 .members-count {
   color: #e6e6e6;
