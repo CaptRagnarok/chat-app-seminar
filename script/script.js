@@ -1,7 +1,27 @@
+//--------------------
+// INITIALIZATION
+//--------------------
 // Connects to your Scaledrone channel
 // Scaledrone constructor takes the CLIENT ID and data for a new user
 
 const CLIENT_ID = 'SvKe8brTvD9tOzJQ';
+
+//--------------------
+// REDIRECT AREA
+
+// Check if the user went through the login process
+// If accessing /chatapp.html directly, redirect to login screen
+
+let name = localStorage.getItem('name') || '';
+if (name === '') {
+  window.location.href = './index.html';
+}
+
+//---------------------------
+// SCALEDRONE CHATROOM SETUP
+
+// Initial user and members setup
+
 const drone = new ScaleDrone(CLIENT_ID, {
   data: {
     // Will be sent out as clientData via events
@@ -10,23 +30,12 @@ const drone = new ScaleDrone(CLIENT_ID, {
   },
 });
 
-const logoutButton = document.querySelector('.logout-button');
-
-logoutButton.addEventListener('click', function () {
-  localStorage.removeItem('name');
-
-  window.location.href = './index.html';
-});
-
-// ------------------------------------------
-
 // Keeps track of current online users
 let members = [];
 
 // ------------------------------------------
 
 // Configures the Scaledrone chatroom
-
 // Posts a successful connection, unless there is an error
 
 drone.on('open', (error) => {
@@ -51,6 +60,7 @@ drone.on('open', (error) => {
   room.on('member_join', (member) => {
     members.push(member);
     updateMembersDOM();
+    // Added user "join" message
     displayStatusMessage(`${member.clientData.name} has joined the chat.`);
   });
 
@@ -60,6 +70,7 @@ drone.on('open', (error) => {
       const member = members[index];
       members.splice(index, 1);
       updateMembersDOM();
+      // Added user "leave" message
       displayStatusMessage(`${member.clientData.name} has left the chat.`);
     }
   });
@@ -86,8 +97,19 @@ function getRandomColor() {
   return '#' + Math.floor(Math.random() * 0xffffff).toString(16);
 }
 
+//----------------------
+// LOGOUT FUNCTIONALITY
+
+const logoutButton = document.querySelector('.logout-button');
+
+logoutButton.addEventListener('click', function () {
+  localStorage.removeItem('name');
+
+  window.location.href = './index.html';
+});
+
 //----------------------------------
-//------------- DOM STUFF----------|
+// DOM - MESSAGES AND MEMBERS
 //----------------------------------
 
 const DOM = {
@@ -97,6 +119,8 @@ const DOM = {
   input: document.querySelector('.message-form__input'),
   form: document.querySelector('.message-form'),
 };
+
+// Adds messages to DOM
 
 DOM.form.addEventListener('submit', sendMessage);
 
@@ -112,6 +136,7 @@ function sendMessage() {
   });
 }
 
+// Creates Members in "online-section"
 function createMemberElement(member) {
   const { name, color } = member.clientData;
   const el = document.createElement('div');
@@ -121,6 +146,7 @@ function createMemberElement(member) {
   return el;
 }
 
+// Updates "Online" counter
 function updateMembersDOM() {
   //how many users in room
   DOM.membersCount.innerText = `Online: ${members.length}`;
@@ -129,15 +155,20 @@ function updateMembersDOM() {
     DOM.membersList.appendChild(createMemberElement(member))
   );
 }
-
+// Creates messages (message, my-message)
 function createMessageElement(text, member) {
   const el = document.createElement('div');
   el.className = 'message';
 
+  // Gives different class to current user, and other user
+  if (member.id === drone.clientId) {
+    el.className = 'my-message';
+  }
   const messageContent = document.createElement('div');
   messageContent.className = 'message-content';
-  messageContent.innerHTML = replaceEmojisWithUnicode(text);
+  messageContent.innerHTML = replaceEmojisWithUnicode(text); // Replaces defined text with emojis
 
+  // Handles message timestamp
   const timestamp = document.createElement('div');
   timestamp.className = 'message-timestamp';
   timestamp.textContent = getCurrentTimestamp();
@@ -145,41 +176,8 @@ function createMessageElement(text, member) {
   el.appendChild(createMemberElement(member));
   el.appendChild(messageContent);
   el.appendChild(timestamp);
-  // messageContent.appendChild(document.createTextNode(text)); SEEMS LIKE I DON'T NEED THIS ANYMORE
-
-  // differentiate from current user
-  if (member.id === drone.clientId) {
-    el.className = 'my-message';
-  }
-
-  // el.appendChild(document.createTextNode(textWithEmojis)); THIS MADE DOUBLE TEXT
-
-  // checks for IDs, only for testing purposes
-
-  // console.log('MemberID: ', member.id);
-  // console.log('ClientID: ', drone.clientId);
 
   return el;
-}
-
-function addMessageToListDOM(text, member) {
-  const el = DOM.messages;
-  const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight;
-  // el.appendChild(createMessageElement(text, member));
-  // Using prepend because flex-end doesn't work with overflow:scroll, so this helps with ordering
-  el.prepend(createMessageElement(text, member));
-  if (wasTop) {
-    el.scrollTop = el.scrollHeight - el.clientHeight;
-  }
-}
-
-// function for "user has joined/left the chat"
-function displayStatusMessage(message) {
-  const el = document.createElement('div');
-  el.textContent = message;
-  el.className = 'status-message';
-  DOM.messages.appendChild(el);
-  DOM.messages.scrollTop = DOM.messages.scrollHeight;
 }
 
 // controls the timestamp in messages
@@ -190,9 +188,41 @@ function getCurrentTimestamp() {
   return `${hours}:${minutes}`;
 }
 
-//----------------------------------
-//---------- EMOJI SUPPORT---------|
-//----------------------------------
+// Pushes messages to DOM
+function addMessageToListDOM(text, member) {
+  const el = DOM.messages;
+  const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight;
+  // Using prepend because flex-end doesn't work with overflow:scroll, so this helps with layout issues
+  el.prepend(createMessageElement(text, member));
+  if (wasTop) {
+    el.scrollTop = el.scrollHeight - el.clientHeight;
+  }
+}
+
+// Handles "user has joined/left the chat" messages
+function displayStatusMessage(message) {
+  const el = document.createElement('div');
+  el.textContent = message;
+  el.className = 'status-message';
+  DOM.messages.appendChild(el);
+  DOM.messages.scrollTop = DOM.messages.scrollHeight;
+}
+//----------------------
+// DEBUG AREA
+// messageContent.appendChild(document.createTextNode(text)); SEEMS LIKE I DON'T NEED THIS ANYMORE
+
+// el.appendChild(document.createTextNode(textWithEmojis)); THIS MADE DOUBLE TEXT
+
+// checks for IDs, only for testing purposes
+
+// console.log('MemberID: ', member.id);
+// console.log('ClientID: ', drone.clientId);
+//------------------------------------------------------
+
+//----------------------
+// DOM - EMOJI SUPPORT
+//----------------------
+
 function replaceEmojisWithUnicode(text) {
   // Define a map of emoji replacements
   const emojiMap = {
@@ -201,12 +231,11 @@ function replaceEmojisWithUnicode(text) {
     '<3': '\u{1F497}',
     '</3': '\u{1F494}',
     '8D': '\u{1F576}',
-    '/XD': '\u{1F602}',
+    '/XD': '\u{1F602}', // fix escape characters for X
     '/XXD': '\u{1F923}',
     ':thumbsup:': '\u{1F44D}',
     ':thumbsdown:': '\u{1F44E}',
     ':flex:': '\u{1F4AA}',
-    // Add more emoji replacements as needed
   };
 
   // Replace emojis in the text
@@ -224,9 +253,9 @@ function replaceEmojisWithUnicode(text) {
 function escapeRegExp(string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
-//-----------------------------
-// AUTOMATED EMOJI PICKER
-//-----------------------------
+//---------------------
+// DOM - EMOJI PICKER
+//---------------------
 
 // defines emoji picker button and div
 const emojiPickerBtn = document.getElementById('emoji-picker-btn');
@@ -286,16 +315,6 @@ function closeMenu() {
   onlineSection.style.width = '0';
 }
 
-function handleDocumentClick(event) {
-  const target = event.target;
-  const isOnlineSection = onlineSection.contains(target);
-  const isHamburger = hamburger.contains(target);
-
-  if (!isOnlineSection && !isHamburger) {
-    closeMenu();
-  }
-}
-
 hamburger.addEventListener('click', function () {
   if (!menuOpen) {
     openMenu();
@@ -303,4 +322,16 @@ hamburger.addEventListener('click', function () {
     closeMenu();
   }
 });
+
+// CODE IN PROGRESS, NEED TO MAKE DOM CLOSE ONLINE SECTION WHEN CLICKING ANYWHERE ELSE, BUT ONLY ON SMALL SCREENS
+// function handleDocumentClick(event) {
+//   const target = event.target;
+//   const isOnlineSection = onlineSection.contains(target);
+//   const isHamburger = hamburger.contains(target);
+
+//   if (!isOnlineSection && !isHamburger) {
+//     closeMenu();
+//   }
+// }
+
 // document.addEventListener('click', handleDocumentClick); // closes sidebar when you click anywhere, but needs more work
