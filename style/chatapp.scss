@@ -191,7 +191,7 @@ body {
   border-radius: 50%;
 }
 .hamburger-input {
-  margin-right: 15px;
+  margin-right: 5px;
 }
 .members-count {
   color: $clr-wt-90;
@@ -223,7 +223,6 @@ body {
   align-self: center;
   width: 100%;
   background-color: $clr-bk;
-  border: 2px solid red;
   z-index: 3;
 }
 .message-form * {

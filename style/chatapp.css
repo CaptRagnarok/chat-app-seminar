@@ -200,7 +200,7 @@ body {
   border-radius: 50%; }
 
 .hamburger-input {
-  margin-right: 15px; }
+  margin-right: 5px; }
 
 .members-count {
   color: #e6e6e6;
@@ -221,7 +221,6 @@ body {
   align-self: center;
   width: 100%;
   background-color: #080710;
-  border: 2px solid red;
   z-index: 3; }
 
 #emoji-picker {
