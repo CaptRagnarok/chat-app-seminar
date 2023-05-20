@@ -14,30 +14,29 @@
 // .app-wrapper {
 //   outline: 3px solid red;
 // }
-.message-section {
-  outline: 5px dotted red;
-}
+// .message-section {
+//   outline: 5px dotted red;
+// }
 
-.messages {
-  outline: 2px dotted green;
-}
-.message-form {
-  outline: 2px dotted red;
-}
-.emoji-picker,
-.emoji-picker-btn,
-.font-awesome,
-.message-form__button {
-  outline: 2px dotted purple;
-}
+// .messages {
+//   outline: 2px dotted green;
+// }
+// .message-form {
+//   outline: 2px dotted red;
+// }
+// .emoji-picker,
+// .emoji-picker-btn,
+// .font-awesome,
+// .message-form__button {
+//   outline: 2px dotted purple;
+// }
 
 //-----------------------
 // GENERAL
 //-----------------------
 body {
   @include flex-column;
-  background-color: #7ec3fc;
-  // padding: 13px;
+  background-color: $clr-bk;
   position: fixed;
   overflow: hidden;
   top: 0;
@@ -61,7 +60,7 @@ body {
 .app-wrapper {
   display: flex;
   justify-content: center;
-  background: gray;
+  background-color: $clr-gray-bcg;
   margin: auto;
   max-width: 1280px;
   min-width: 360px;
@@ -84,13 +83,14 @@ body {
 // ONLINE SECTION
 //-----------------------
 .online-section {
-  height: calc(100% - 50px);
+  // height: calc(100% - 50px);
+  height: 100%;
   width: 0px;
   position: fixed;
   top: 0;
   left: -2px;
-  z-index: 2;
-  background-color: peachpuff;
+  z-index: 1;
+  background: #003968;
   overflow: hidden;
   border: 1px solid #e4e4e4;
   transition: all 0.5s ease;
@@ -129,6 +129,7 @@ body {
   z-index: 1;
   min-height: 0;
   overflow: hidden;
+  transition: all 4.5s ease;
 }
 /* 3rd row div, where msgs go */
 .messages {
@@ -173,11 +174,13 @@ body {
 }
 /* the typable area "form" */
 .message-form {
+  padding: 10px;
   display: flex;
   align-items: center;
   align-self: center;
   flex-shrink: 2;
   width: 100%;
+  background-color: #00335e;
   // fixes keyboard scroll
   position: fixed;
   bottom: 0;

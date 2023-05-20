@@ -92,6 +92,7 @@
         <!-- msg input -->
         <form class="message-form" onsubmit="return false;">
           <i class="fa-solid fa-bars font-awesome"></i>
+          <div id="emoji-picker-btn">😎</div>
           <input
             class="message-form__input"
             placeholder="Type a message.."
@@ -99,10 +100,12 @@
           />
 
           <!-- send button -->
-          <input class="message-form__button" value="Send" type="submit" />
+          <!-- <input class="message-form__button" value="Send" type="submit" /> -->
+          <button class="message-form__button" value="Send" type="submit">
+            <i class="fa fa-paper-plane"></i>
+          </button>
 
           <!-- emoji button -->
-          <button id="emoji-picker-btn">😎</button>
         </form>
       </div>
       <!-- END OF MESSAGE AREA -->
@@ -111,6 +114,5 @@
 
     <!-- SCRIPT -->
     <script src="./script/script.js"></script>
-    <script src="./script/clientid.js"></script>
   </body>
 </html>
