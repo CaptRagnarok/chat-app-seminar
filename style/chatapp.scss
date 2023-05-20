@@ -121,7 +121,7 @@ body {
   display: flex;
   flex-direction: column-reverse;
   overflow-y: auto;
-  height: 100vh;
+  height: calc(100% - 40px);
   transition: $transition-02;
   flex-shrink: 1; //is this needed
   // padding-bottom: 50px; // accounts for fixed input msg area

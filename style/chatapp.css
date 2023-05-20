@@ -144,7 +144,7 @@ body {
   display: flex;
   flex-direction: column-reverse;
   overflow-y: auto;
-  height: 100vh;
+  height: calc(100% - 40px);
   transition: all 0.5s ease;
   flex-shrink: 1; }
 

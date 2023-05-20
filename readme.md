@@ -8,6 +8,11 @@ Designed to be a working chat app using the _Scaledrone API_ for functionality.
 
 ## Changelog
 
+### 0.6.7
+
+- Fixed "messages" appearing under input
+- Fixed emoji div blinking when emoji pressed
+
 ### 0.6.6
 
 - Further optimization of the emoji layout
