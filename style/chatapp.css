@@ -53,6 +53,11 @@ input[type='search']::-webkit-search-results-button,
 input[type='search']::-webkit-search-results-decoration {
   display: none; }
 
+input[type='search'] {
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none; }
+
 body {
   display: flex;
   flex-direction: column;

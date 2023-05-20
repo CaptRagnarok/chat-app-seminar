@@ -40,6 +40,7 @@ button {
   border: none;
 }
 
+// input type:search fixes
 input[type='search']::-ms-clear {
   display: none;
   width: 0;
@@ -57,3 +58,9 @@ input[type='search']::-webkit-search-results-button,
 input[type='search']::-webkit-search-results-decoration {
   display: none;
 }
+input[type='search'] {
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+}
+// fixes for input type search
