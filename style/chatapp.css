@@ -208,10 +208,10 @@ body {
   font-weight: bold; }
 
 .message-form__input {
+  flex-grow: 1;
   border: 1px solid #16bb00;
   border-radius: 1.125rem;
   padding: 10px 15px;
-  margin: 0 10px;
   font-size: 16px; }
 
 .message-form {
