@@ -179,8 +179,6 @@ body {
 
 /* the typable area "form" */
 .message-form {
-  position: fixed;
-  bottom: 0;
   padding: 5px 10px;
   display: flex;
   flex-grow: 1;
