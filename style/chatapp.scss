@@ -214,7 +214,7 @@ body {
 // MESSAGE INPUT FORM SECTION
 //----------------------------
 .message-form {
-  @include position-fixed-input; // fixes keyboard scroll
+  // @include position-fixed-input; // fixes keyboard scroll
   // padding: 5px 0;
   display: flex;
   // flex-grow: 1;
