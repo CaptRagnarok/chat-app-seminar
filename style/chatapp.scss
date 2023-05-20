@@ -192,6 +192,7 @@ body {
 }
 .hamburger-input {
   margin-right: 15px;
+  margin-left: 15px;
 }
 .members-count {
   color: $clr-wt-90;
@@ -208,6 +209,7 @@ body {
 }
 .fa-paper-plane {
   // padding-right: 30px;
+  margin-right: 10px;
 }
 //----------------------------
 // MESSAGE INPUT FORM SECTION
@@ -219,7 +221,7 @@ body {
   flex-grow: 1;
   align-items: center;
   align-self: center;
-  // width: 100%;
+
   background-color: $clr-bk;
   border: 2px solid red;
   z-index: 3;
@@ -286,6 +288,7 @@ body {
   .message-form {
     position: static;
     padding: 5px;
+    width: 100%;
   }
   .messages {
     padding: 0;

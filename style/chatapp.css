@@ -200,7 +200,8 @@ body {
   border-radius: 50%; }
 
 .hamburger-input {
-  margin-right: 15px; }
+  margin-right: 15px;
+  margin-left: 15px; }
 
 .members-count {
   color: #e6e6e6;
@@ -214,6 +215,9 @@ body {
   padding: 10px 15px;
   margin: 0 10px;
   font-size: 16px; }
+
+.fa-paper-plane {
+  margin-right: 10px; }
 
 .message-form {
   position: fixed;
@@ -274,7 +278,8 @@ body {
 
   .message-form {
     position: static;
-    padding: 5px; }
+    padding: 5px;
+    width: 100%; }
 
   .messages {
     padding: 0; }
