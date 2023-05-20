@@ -282,6 +282,7 @@ body {
     padding: 0; }
 
   #emoji-picker {
-    margin: 0 0 10px 10px; } }
+    margin: 0 0 10px 10px;
+    bottom: 50px; } }
 
 /*# sourceMappingURL=chatapp.css.map */
