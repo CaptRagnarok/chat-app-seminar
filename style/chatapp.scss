@@ -224,6 +224,7 @@ body {
 #emoji-picker {
   @include flex-emoji-picker;
   position: fixed;
+  bottom: 10px;
   background: #007fe7;
   transition: $transition-02;
   column-gap: 3px;
