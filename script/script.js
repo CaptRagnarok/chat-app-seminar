@@ -300,8 +300,8 @@ function insertEmoji(emoji) {
 //-----------------------------
 // SIDEBAR FUNCTIONALITY
 //-----------------------------
-const hamburger = document.querySelector('.font-awesome');
-const hamburger2 = document.querySelector('.font-awesome2');
+const hamburger = document.querySelector('.hamburger-input');
+const hamburger2 = document.querySelector('.hamburger-sidebar');
 const onlineSection = document.querySelector('.online-section');
 
 let menuOpen = false;
