@@ -159,8 +159,8 @@ body {
 }
 /* the typable area "form" */
 .message-form {
-  // @include position-fixed-input; // fixes keyboard scroll
-  padding: 5px 10px;
+  @include position-fixed-input; // fixes keyboard scroll
+  padding: 5px 50px;
   display: flex;
   flex-grow: 1;
   align-items: center;
