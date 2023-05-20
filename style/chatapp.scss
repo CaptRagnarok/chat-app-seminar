@@ -191,7 +191,7 @@ body {
   border-radius: 50%;
 }
 .hamburger-input {
-  margin-right: 5px;
+  margin: 0 5px;
 }
 .members-count {
   color: $clr-wt-90;
@@ -201,6 +201,9 @@ body {
 .fa-paper-plane {
   // padding-right: 30px;
   // margin-right: 30px; // NO
+}
+#emoji-picker-btn {
+  margin-right: 5px;
 }
 .message-form__input {
   flex-grow: 1; // grows input field to max-width

@@ -200,12 +200,15 @@ body {
   border-radius: 50%; }
 
 .hamburger-input {
-  margin-right: 5px; }
+  margin: 0 5px; }
 
 .members-count {
   color: #e6e6e6;
   font-size: 18px;
   font-weight: bold; }
+
+#emoji-picker-btn {
+  margin-right: 5px; }
 
 .message-form__input {
   flex-grow: 1;
