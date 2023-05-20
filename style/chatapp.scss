@@ -210,6 +210,9 @@ body {
   position: fixed;
   bottom: 0;
   z-index: 3;
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
 }
 .message-form__input {
   flex-grow: 1;
