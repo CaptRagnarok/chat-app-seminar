@@ -135,18 +135,15 @@ body {
   width: 100%;
   z-index: 1;
   min-height: 0;
-  outline: 2px solid red;
   overflow: hidden;
   transition: all 4.5s ease; }
 
-/* 3rd row div, where msgs go */
 .messages {
   display: flex;
   flex-direction: column-reverse;
   overflow-y: auto;
   height: calc(100% - 40px);
-  transition: all 0.5s ease;
-  flex-shrink: 1; }
+  transition: all 0.5s ease; }
 
 /* msg content (once any msgs exist) */
 .message {
