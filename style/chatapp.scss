@@ -72,12 +72,26 @@ body {
   color: green;
   text-align: center;
   align-self: center;
+}
+.f-awesome {
+  color: $clr-wt-90;
+  font-size: 18px;
+  // background-color: green;
+  border: none;
   padding: 10px;
   margin-right: 10px;
-  background-color: gray;
+}
+.members-count {
+  color: $clr-wt-90;
+  font-size: 18px;
+  font-weight: bold;
+}
+.message-form__input {
+  padding: 0.5rem 1rem;
+  border-radius: 1.125rem;
 }
 .fa-bars {
-  color: red;
+  z-index: 5;
 }
 //-----------------------
 // ONLINE SECTION
@@ -89,8 +103,8 @@ body {
   position: fixed;
   top: 0;
   left: -2px;
-  z-index: 1;
-  background: #003968;
+  z-index: 3;
+  background: $gradient-3;
   overflow: hidden;
   border: 1px solid #e4e4e4;
   transition: all 0.5s ease;
@@ -99,17 +113,22 @@ body {
 .topbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 5px;
+  outline: 2px solid red;
+  height: 5vh;
 }
+
 .member-count-wrapper {
   display: flex;
-  gap: 10px;
   align-items: center;
+  height: 0;
   // justify-content: center;
 }
 .members-list {
   @include flex-column;
-  max-height: 93%; // finetune later
+  height: 95vh;
+  outline: 2px solid red;
 }
 .members-list .member {
   border: 1.5px solid black;
@@ -180,13 +199,13 @@ body {
 }
 /* the typable area "form" */
 .message-form {
-  padding: 10px;
+  padding: 5px 10px;
   display: flex;
   align-items: center;
   align-self: center;
   flex-shrink: 2;
   width: 100%;
-  background-color: #00335e;
+  // background-color: $clr-gray-bcg;
   // fixes keyboard scroll
   position: fixed;
   bottom: 0;
@@ -207,16 +226,9 @@ body {
 #emoji-picker,
 #emoji-picker-btn,
 .logout-button,
-.message-form__button {
+.message-form__button,
+.f-awesome {
   cursor: pointer;
-}
-/* the send btn */
-.message-form__button {
-  margin: 10px;
-}
-// the logout button
-.logout-button {
-  margin-top: 15px;
 }
 
 //-----------------------
@@ -254,12 +266,16 @@ body {
 //-----------------------
 @media (min-width: 650px) {
   .online-section {
-    width: 30%;
+    width: 30rem;
+
     position: static;
     height: 100%;
   }
   .font-awesome {
     display: none !important;
+  }
+  .font-awesome2 {
+    display: none;
   }
   .message-form {
     position: static;

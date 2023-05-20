@@ -8,6 +8,15 @@ Designed to be a working chat app using the _Scaledrone API_ for functionality.
 
 ## Changelog
 
+### 0.6.3
+
+- fixed small bug where login/logout messages appeared above chat due to overflow: scroll fix (added prepend instead of append)
+- temporarily set different sizes to icons (not final size)
+- online section fixes:
+  - layout fixes
+  - added a hamburger menu when in mobile view
+  - fixed heights and paddings (section height: 100%, topbar 5%, members 95%)
+
 ### 0.6.2
 
 - added additional icons (online counter area, emoji icon > added font-awesome icon)

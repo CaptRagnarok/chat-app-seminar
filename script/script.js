@@ -148,7 +148,7 @@ function createMemberElement(member) {
 
 // Updates "Online" counter
 function updateMembersDOM() {
-  //how many users in room
+  //how many users in room (ONLINE)
   DOM.membersCount.innerText = `${members.length}`;
   DOM.membersList.innerHTML = '';
   members.forEach((member) =>
@@ -204,7 +204,7 @@ function displayStatusMessage(message) {
   const el = document.createElement('div');
   el.textContent = message;
   el.className = 'status-message';
-  DOM.messages.appendChild(el);
+  DOM.messages.prepend(el);
   DOM.messages.scrollTop = DOM.messages.scrollHeight;
 }
 //----------------------
@@ -301,6 +301,7 @@ function insertEmoji(emoji) {
 // SIDEBAR FUNCTIONALITY
 //-----------------------------
 const hamburger = document.querySelector('.font-awesome');
+const hamburger2 = document.querySelector('.font-awesome2');
 const onlineSection = document.querySelector('.online-section');
 
 let menuOpen = false;
@@ -316,6 +317,13 @@ function closeMenu() {
 }
 
 hamburger.addEventListener('click', function () {
+  if (!menuOpen) {
+    openMenu();
+  } else {
+    closeMenu();
+  }
+});
+hamburger2.addEventListener('click', function () {
   if (!menuOpen) {
     openMenu();
   } else {
