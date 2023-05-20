@@ -226,6 +226,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  position: fixed;
   background: #007fe7;
   transition: all 0.5s ease;
   column-gap: 3px;
@@ -244,7 +245,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 96, 175, 0.5);
+  background-color: rgba(47, 86, 121, 0.5);
   transition: all 0.3s;
   height: 40px;
   width: 40px;
