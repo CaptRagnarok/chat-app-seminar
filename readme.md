@@ -8,9 +8,14 @@ Designed to be a working chat app using the _Scaledrone API_ for functionality.
 
 ## Changelog
 
+### 0.6.9
+
+- Color design update (still working on it)
+
 ### 0.6.8
 
 - Various bugtesting and patch for input width not conforming to mobile viewport width
+- Added circle animation to always be active on mobile
 
 ### 0.6.7
 

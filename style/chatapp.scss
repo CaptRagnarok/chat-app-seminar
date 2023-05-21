@@ -28,7 +28,7 @@ body {
 .member-count-wrapper,
 .members-list,
 .messages {
-  border: 1px solid #e4e4e4;
+  // border: 1px solid #e4e4e4;
   padding: 15px;
 }
 //-----------------------
@@ -37,7 +37,7 @@ body {
 
 .app-wrapper {
   display: flex;
-  background-color: $clr-gray-bcg;
+  // background-color: $clr-bk;
   margin: auto; // centers app
   max-width: 1280px;
   min-width: 360px;
@@ -55,9 +55,10 @@ body {
   width: 0px; // responsive
   left: -2px; // fix for bleeding in viewport
   z-index: 3;
-  background: $gradient-3;
+  background: linear-gradient(71deg, #080509, #1a171c, #080509);
   overflow: hidden;
-  border: 1px solid #e4e4e4;
+  border-left: 2px solid $clr-gray-brd;
+  border-right: 2px solid $clr-gray-brd;
   transition: $transition-02;
 }
 
@@ -77,12 +78,15 @@ body {
   height: 95vh;
 }
 .members-list .member {
-  border: 1.5px solid black;
+  border: 2px solid rgb(202, 173, 4);
   text-align: center;
   padding: 10px;
   margin-bottom: 10px;
-  background: rgba($color: #dfdfdf, $alpha: 0.5);
-  border-radius: 4%;
+  font-size: 20px;
+  background: #191820;
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 40px;
 }
 
 //-----------------------
@@ -90,6 +94,15 @@ body {
 //-----------------------
 .message-section {
   @include flex-column;
+  background-color: rgba($color: #5c5c5c, $alpha: 0.2);
+  //test
+  // background: radial-gradient(black 15%, transparent 16%) 0 0,
+  //   radial-gradient(black 15%, transparent 16%) 8px 8px,
+  //   radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
+  //   radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+  // background-color: #181818;
+  background-image: url('../images/black-linen.png');
+  background-size: 16px 16px;
   width: 100%;
   z-index: 1;
   min-height: 0;
@@ -264,6 +277,10 @@ body {
   }
   .messages {
     padding: 0;
+  }
+
+  .message-section {
+    border-right: 2px solid $clr-gray-brd;
   }
   #emoji-picker {
     margin: 0 0 10px 10px;
