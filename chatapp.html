@@ -1,133 +1,119 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!--<script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>-->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1"
-    />
-    <title>Chatapp</title>
-    <link rel="stylesheet" href="./style/chatapp.css" />
-    <script
-      src="https://kit.fontawesome.com/ca5e703c02.js"
-      crossorigin="anonymous"
-    ></script>
 
-    <script
-      type="text/javascript"
-      src="https://cdn.scaledrone.com/scaledrone.min.js"
-    ></script>
-  </head>
-  <body>
-    <!--------------------------------
+<head>
+  <!--<script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>-->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <title>Chatapp</title>
+  <link rel="stylesheet" href="./style/chatapp.css" />
+  <script src="https://kit.fontawesome.com/ca5e703c02.js" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="https://cdn.scaledrone.com/scaledrone.min.js"></script>
+</head>
+
+<body>
+  <!--------------------------------
         WRAPPER - ALL MAIN CONTENT 
     --------------------------------->
-    <main class="app-wrapper">
-      <!-------------------------------- 
+  <main id="app-wrapper">
+    <!-------------------------------- 
                 ONLINE section 
         (member-#, logout, member-list ) 
       --------------------------------->
-      <div class="online-section">
-        <!-- member-#, logout section -->
-        <div class="topbar">
-          <i
-            class="hamburger-sidebar font-awesome-sidebar fa-solid fa-bars"
-          ></i>
-          <div class="member-count-wrapper">
-            <i class="font-awesome-sidebar fa-solid fa-users"></i>
-            <div class="members-count"></div>
-          </div>
-
-          <div class="logout">
-            <button class="logout-button" value="Logout">
-              <i
-                class="font-awesome-sidebar fa-solid fa-right-from-bracket"
-              ></i>
-            </button>
-          </div>
+    <div class="online-section">
+      <!-- member-#, logout section -->
+      <div class="topbar">
+        <i class="hamburger-sidebar font-awesome-sidebar fa-solid fa-bars"></i>
+        <div class="member-count-wrapper">
+          <i class="font-awesome-sidebar fa-solid fa-users"></i>
+          <div class="members-count"></div>
         </div>
-        <!-- member-list section -->
-        <div class="members-list"></div>
-      </div>
-      <!-------- END OF SIDEBAR -------->
 
-      <!----------------------------------
+        <div class="logout">
+          <button class="logout-button" value="Logout">
+            <i class="font-awesome-sidebar fa-solid fa-right-from-bracket"></i>
+          </button>
+        </div>
+      </div>
+      <!-- member-list section -->
+      <div class="members-list"></div>
+    </div>
+    <!-------- END OF SIDEBAR -------->
+
+    <!----------------------------------
                   MESSAGE AREA 
         --------------------------------->
-      <div class="message-section">
-        <div class="messages">
-          <!-- sent msgs go here -->
-          <div id="emoji-picker">
-            <div class="emoji">🙂</div>
-            <div class="emoji">😊</div>
-            <div class="emoji">😀</div>
-            <div class="emoji">😎</div>
-            <div class="emoji">😅</div>
-            <div class="emoji">🤣</div>
-            <div class="emoji">😂</div>
-            <div class="emoji">🙃</div>
-            <div class="emoji">😉</div>
-            <div class="emoji">😋</div>
-            <div class="emoji">😛</div>
-            <div class="emoji">😜</div>
-            <div class="emoji">🤗</div>
-            <div class="emoji">😐</div>
-            <div class="emoji">🤐</div>
-            <div class="emoji">🤨</div>
-            <div class="emoji">😑</div>
-            <div class="emoji">😶</div>
-            <div class="emoji">😏</div>
-            <div class="emoji">😒</div>
-            <div class="emoji">🙄</div>
-            <div class="emoji">😴</div>
-            <div class="emoji">😨</div>
-            <div class="emoji">😥</div>
-            <div class="emoji">😢</div>
-            <div class="emoji">😤</div>
-            <div class="emoji">😡</div>
-            <div class="emoji">💀</div>
-            <div class="emoji">💗</div>
-            <div class="emoji">💔</div>
-            <div class="emoji">💚</div>
-            <div class="emoji">💙</div>
-            <div class="emoji">🤍</div>
-            <div class="emoji">🖤</div>
-            <div class="emoji">👋</div>
-            <div class="emoji">🖖</div>
-            <div class="emoji">👍</div>
-            <div class="emoji">👎</div>
-            <div class="emoji">🙏</div>
-            <div class="emoji">💪</div>
-            <!-- Add more emojis here -->
-          </div>
+    <div class="message-section">
+      <div class="messages">
+        <!-- sent msgs go here -->
+        <div id="emoji-picker">
+          <div class="emoji">🙂</div>
+          <div class="emoji">😊</div>
+          <div class="emoji">😀</div>
+          <div class="emoji">😎</div>
+          <div class="emoji">😅</div>
+          <div class="emoji">🤣</div>
+          <div class="emoji">😂</div>
+          <div class="emoji">🙃</div>
+          <div class="emoji">😉</div>
+          <div class="emoji">😋</div>
+          <div class="emoji">😛</div>
+          <div class="emoji">😜</div>
+          <div class="emoji">🤗</div>
+          <div class="emoji">😐</div>
+          <div class="emoji">🤐</div>
+          <div class="emoji">🤨</div>
+          <div class="emoji">😑</div>
+          <div class="emoji">😶</div>
+          <div class="emoji">😏</div>
+          <div class="emoji">😒</div>
+          <div class="emoji">🙄</div>
+          <div class="emoji">😴</div>
+          <div class="emoji">😨</div>
+          <div class="emoji">😥</div>
+          <div class="emoji">😢</div>
+          <div class="emoji">😤</div>
+          <div class="emoji">😡</div>
+          <div class="emoji">💀</div>
+          <div class="emoji">💗</div>
+          <div class="emoji">💔</div>
+          <div class="emoji">💚</div>
+          <div class="emoji">💙</div>
+          <div class="emoji">🤍</div>
+          <div class="emoji">🖤</div>
+          <div class="emoji">👋</div>
+          <div class="emoji">🖖</div>
+          <div class="emoji">👍</div>
+          <div class="emoji">👎</div>
+          <div class="emoji">🙏</div>
+          <div class="emoji">💪</div>
+          <!-- Add more emojis here -->
         </div>
-
-        <!-- msg input -->
-        <form class="message-form" onsubmit="return false;">
-          <i class="hamburger-input font-awesome-input fa-solid fa-bars"></i>
-          <div id="emoji-picker-btn">
-            <i class="font-awesome-input fa-regular fa-face-smile"></i>
-          </div>
-          <input
-            class="message-form__input"
-            placeholder="Type a message.."
-            type="search"
-          />
-
-          <!-- send button -->
-          <button class="message-form__button" value="Senawdawdd" type="submit">
-            <i class="font-awesome-input fa fa-paper-plane"></i>
-          </button>
-
-          <!-- emoji button -->
-        </form>
       </div>
-      <!-- END OF MESSAGE AREA -->
-    </main>
-    <!-- END OF WRAPPER - ALL CONTENT -->
 
-    <!-- SCRIPT -->
-    <script src="./script/script.js"></script>
-  </body>
+      <!-- msg input -->
+      <form class="message-form" onsubmit="return false;">
+        <i class="hamburger-input font-awesome-input fa-solid fa-bars"></i>
+        <div id="emoji-picker-btn">
+          <i class="font-awesome-input fa-regular fa-face-smile"></i>
+        </div>
+        <input class="message-form__input" placeholder="Type a message.." type="search" />
+
+        <!-- send button -->
+        <button class="message-form__button" value="Senawdawdd" type="submit">
+          <i class="font-awesome-input fa fa-paper-plane"></i>
+        </button>
+
+        <!-- emoji button -->
+      </form>
+    </div>
+    <!-- END OF MESSAGE AREA -->
+  </main>
+  <!-- END OF WRAPPER - ALL CONTENT -->
+
+  <!-- SCRIPT -->
+  <script src="./script/script.js"></script>
+</body>
+
 </html>

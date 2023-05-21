@@ -35,7 +35,7 @@ body {
 // MAIN STRUCTURE
 //-----------------------
 
-.app-wrapper {
+#app-wrapper {
   display: flex;
   // background-color: $clr-bk;
   margin: auto; // centers app
@@ -73,22 +73,34 @@ body {
   align-items: center;
   height: 0;
 }
+.members-count {
+  @include user-select-none;
+}
 .members-list {
   @include flex-column;
   height: 95vh;
 }
-.members-list .member {
-  border: 2px solid rgb(202, 173, 4);
-  text-align: center;
-  padding: 10px;
-  margin-bottom: 10px;
-  font-size: 20px;
-  background: #191820;
-  text-transform: uppercase;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  border-radius: 40px;
-}
+.members-list {
+  .member {
+    @include user-select-none;
+    @include box-shadow($shadow-y);
+    border: 1px solid #caad04;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    background: #262521;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: $radius-10;
+    transition: $transition-02;
 
+    &:hover {
+      @include box-shadow($shadow-w);
+      transform: $translate;
+      border: 1px solid $clr-gray-brd;
+    }
+  }
+}
 //-----------------------
 // MESSAGE SECTION
 //-----------------------
@@ -122,17 +134,18 @@ body {
 /* msg content (once any msgs exist) */
 .message {
   align-self: flex-start;
-  background-color: rgba($color: #0060af, $alpha: 0.5);
+  background-color: #999999;
   margin: 10px;
   padding: 10px 10px;
-  border-radius: 10%;
+  border-radius: $radius-10;
 }
 .my-message {
   align-self: flex-end;
-  background-color: rgba($color: #dfdfdf, $alpha: 0.5);
+  background-color: #bda61d;
   margin: 10px;
   padding: 10px 10px;
-  border-radius: 10%;
+  border-radius: $radius-10;
+  font-weight: 500;
 }
 
 .message-content {
@@ -181,7 +194,7 @@ body {
 .font-awesome-input {
   @extend .font-awesome;
   background-color: $clr-gray-brd;
-  border-radius: 50%;
+  border-radius: $radius-20;
 }
 .hamburger-input {
   margin: 0 5px;
@@ -197,7 +210,7 @@ body {
 .message-form__input {
   flex-grow: 1; // grows input field to max-width
   border: 1px solid #16bb00;
-  border-radius: 1.125rem;
+  border-radius: $radius-20;
   padding: 10px 15px;
   font-size: 16px;
 }
@@ -226,13 +239,13 @@ body {
   @include flex-emoji-picker;
   position: fixed;
   bottom: 10px;
-  background: #007fe7;
+  background: #003e70;
   transition: $transition-02;
   column-gap: 3px;
   height: 0;
   width: 355px;
   overflow: hidden;
-  border-radius: 5%;
+  border-radius: $radius-10;
   margin: 0 auto 50px auto;
   z-index: 2;
 }
@@ -242,15 +255,15 @@ body {
 
 .emoji {
   @include flex-emoji-picker;
-  background-color: rgba($color: #2f5679, $alpha: 0.5);
+  background-color: rgba($color: #5c83a5, $alpha: 0.5);
   transition: $transition;
   height: 40px;
   width: 40px;
   font-size: 22px;
-  border-radius: 50%;
+  border-radius: $radius-50;
 
   &:hover {
-    background: #1c2d3a;
+    background: #b3c4d1;
   }
 }
 

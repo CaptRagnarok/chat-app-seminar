@@ -4,12 +4,13 @@
 
 $clr-wt: #fff;
 $clr-wt-90: #e6e6e6;
+// $clr-wt-80: #cccccc;
 $clr-wt-60: #999999;
 
 $clr-bk: #080710;
 $clr-bk-95: #1e1d24;
 
-$clr-gray-brd: rgba(255, 255, 255, 0.1);
+$clr-gray-brd: rgba(255, 255, 255, 0.102);
 $clr-gray-inp: rgba(255, 255, 255, 0.07);
 $clr-gray-bcg: rgba(255, 255, 255, 0.13);
 
@@ -36,8 +37,15 @@ $fnt-login: 'Poppins', sans-serif;
 // DESIGN
 //-----------------------
 
-$shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+$shadow-y: 2px 3px 5px 0px rgba(202, 173, 4, 1);
+$shadow-w: 0.5px 1px 5px 1.5px rgba(255, 255, 255, 1);
 $shadow-animation: 0 0 0 15px $clr-bk;
+
+$radius-10: 10px;
+$radius-20: 20px;
+$radius-50: 50%;
+
+$translate: translate(1px, 1px);
 
 $transition: all 0.3s;
 $transition-02: all 0.5s ease;

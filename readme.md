@@ -8,6 +8,10 @@ Designed to be a working chat app using the _Scaledrone API_ for functionality.
 
 ## Changelog
 
+### 0.7.0
+
+- Color pallete updated, final colors chosen
+
 ### 0.6.9
 
 - Color design update (still working on it)

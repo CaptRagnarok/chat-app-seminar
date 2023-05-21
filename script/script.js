@@ -26,7 +26,8 @@ const drone = new ScaleDrone(CLIENT_ID, {
   data: {
     // Will be sent out as clientData via events
     name: localStorage.getItem('name') || '',
-    color: getRandomColor(),
+    // color: getRandomColor(),
+    color: '#e6e6e6',
   },
 });
 
