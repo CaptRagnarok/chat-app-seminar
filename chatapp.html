@@ -2,49 +2,55 @@
 <html>
 
 <head>
-  <!--<script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>-->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
   <title>Chatapp</title>
-  <link rel="stylesheet" href="./style/chatapp.css" />
-  <script src="https://kit.fontawesome.com/ca5e703c02.js" crossorigin="anonymous"></script>
 
+  <link rel="stylesheet" href="./style/chatapp.css" />
+
+  <script src="https://kit.fontawesome.com/ca5e703c02.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdn.scaledrone.com/scaledrone.min.js"></script>
 </head>
 
 <body>
-  <!--------------------------------
-        WRAPPER - ALL MAIN CONTENT 
-    --------------------------------->
+  <!-- MAIN WRAPPER -->
   <main id="app-wrapper">
-    <!-------------------------------- 
-                ONLINE section 
-        (member-#, logout, member-list ) 
-      --------------------------------->
+
+    <!-- ONLINE SECTION (WRAPPER) -->
+
     <div id="online-section">
-      <!-- member-#, logout section -->
-      <div class="topbar">
+
+      <!-- topbar -->
+      <div id="topbar">
+
+        <!-- sidebar btn -->
         <i class="hamburger-sidebar font-awesome-sidebar fa-solid fa-bars"></i>
-        <div class="member-count-wrapper">
+
+        <!-- member count -->
+        <div id="member-count-wrapper">
           <i class="font-awesome-sidebar fa-solid fa-users"></i>
-          <div class="members-count"></div>
+          <div id="members-count"></div>
         </div>
 
-        <div class="logout">
-          <button class="logout-button" value="Logout">
+        <!-- logout button -->
+        <div id="logout">
+          <button id="logout-button" value="Logout">
             <i class="font-awesome-sidebar fa-solid fa-right-from-bracket"></i>
           </button>
         </div>
       </div>
-      <!-- member-list section -->
-      <div class="members-list"></div>
-    </div>
-    <!-------- END OF SIDEBAR -------->
 
-    <!----------------------------------
-                  MESSAGE AREA 
-        --------------------------------->
-    <div class="message-section">
+      <!-- members list -->
+      <div id="members-list"></div>
+    </div>
+
+    <!-- END OF ONLINE SECTION (SIDEBAR) -->
+
+    <!-- MESSAGE SECTION -->
+
+    <div id="message-section">
+
+      <!-- MESSAGE AREA -->
       <div class="messages">
         <!-- sent msgs go here -->
         <div id="emoji-picker">
@@ -92,23 +98,30 @@
         </div>
       </div>
 
-      <!-- msg input -->
-      <form class="message-form" onsubmit="return false;">
+      <!-- END OF MESSAGE AREA -->
+
+      <!-- MESSAGE INPUT FORM -->
+
+      <form id="message-form" onsubmit="return false;">
+
+        <!-- sidebar btn -->
         <i class="hamburger-input font-awesome-input fa-solid fa-bars"></i>
+
+        <!-- emoji btn -->
         <div id="emoji-picker-btn">
           <i class="font-awesome-input fa-regular fa-face-smile"></i>
         </div>
-        <input class="message-form__input" placeholder="Type a message.." type="search" />
+
+        <!-- message input -->
+        <input id="message-form__input" placeholder="Type a message.." type="search" />
 
         <!-- send button -->
-        <button class="message-form__button" value="Send" type="submit">
+        <button id="message-form__button" value="Send" type="submit">
           <i class="font-awesome-input fa fa-paper-plane"></i>
         </button>
-
-        <!-- emoji button -->
       </form>
     </div>
-    <!-- END OF MESSAGE AREA -->
+    <!-- END OF MESSAGE INPUT FORM -->
   </main>
   <!-- END OF WRAPPER - ALL CONTENT -->
 

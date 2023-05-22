@@ -95,7 +95,7 @@ drone.on('error', (error) => {
 //----------------------
 // LOGOUT FUNCTIONALITY
 
-const logoutButton = document.querySelector('.logout-button');
+const logoutButton = document.querySelector('#logout-button');
 
 logoutButton.addEventListener('click', function () {
   localStorage.removeItem('name');
@@ -108,11 +108,11 @@ logoutButton.addEventListener('click', function () {
 //----------------------------------
 
 const DOM = {
-  membersCount: document.querySelector('.members-count'),
-  membersList: document.querySelector('.members-list'),
+  membersCount: document.querySelector('#members-count'),
+  membersList: document.querySelector('#members-list'),
+  input: document.querySelector('#message-form__input'),
+  form: document.querySelector('#message-form'),
   messages: document.querySelector('.messages'),
-  input: document.querySelector('.message-form__input'),
-  form: document.querySelector('.message-form'),
 };
 
 // Adds messages to DOM
@@ -202,17 +202,6 @@ function displayStatusMessage(message) {
   DOM.messages.prepend(el);
   DOM.messages.scrollTop = DOM.messages.scrollHeight;
 }
-//----------------------
-// DEBUG AREA
-// messageContent.appendChild(document.createTextNode(text)); SEEMS LIKE I DON'T NEED THIS ANYMORE
-
-// el.appendChild(document.createTextNode(textWithEmojis)); THIS MADE DOUBLE TEXT
-
-// checks for IDs, only for testing purposes
-
-// console.log('MemberID: ', member.id);
-// console.log('ClientID: ', drone.clientId);
-//------------------------------------------------------
 
 //----------------------
 // DOM - EMOJI SUPPORT
@@ -259,8 +248,6 @@ const emojiPicker = document.getElementById('emoji-picker');
 // handles opening and closing the picker div
 emojiPickerBtn.addEventListener('click', () => {
   emojiPicker.classList.toggle('visible');
-  // const emojiPickerDisplay = getComputedStyle(emojiPicker).display;
-  // emojiPicker.style.display = emojiPickerDisplay === 'none' ? 'flex' : 'none';
 });
 
 // inserts the selected emoji into the message input

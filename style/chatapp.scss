@@ -20,8 +20,8 @@ body {
   background-color: $clr-bk;
 }
 
-.member-count-wrapper,
-.members-list,
+#member-count-wrapper,
+#members-list,
 .messages {
   padding: 15px;
 }
@@ -54,27 +54,27 @@ body {
   transition: $transition-02;
 }
 
-.topbar {
+#topbar {
   @include flex-center;
   height: 5vh;
   padding: 30px 5px 20px 5px;
 }
 
-.member-count-wrapper {
+#member-count-wrapper {
   display: flex;
   align-items: center;
   height: 0;
 }
-.members-count * {
+#members-count * {
   @include user-select-none;
 }
-.members-list {
+#members-list {
   @include flex-column;
   height: 95vh;
   align-items: center;
   width: 100%;
 }
-.members-list {
+#members-list {
   .member {
     @include user-select-none;
     @include box-shadow($shadow-y);
@@ -100,7 +100,7 @@ body {
 //-----------------------
 // MESSAGE SECTION
 //-----------------------
-.message-section {
+#message-section {
   @include flex-column;
   background-image: url('../images/black-linen.png');
   background-size: 16px 16px;
@@ -164,14 +164,14 @@ body {
 // transforms cursor into pointer for all btns
 #emoji-picker,
 #emoji-picker-btn,
-.logout-button,
-.message-form__button,
+#logout-button,
+#message-form__button,
 .font-awesome {
   cursor: pointer;
 }
 // Online counter has normal cursor
 .fa-users,
-.members-count {
+#members-count {
   cursor: context-menu;
 }
 //------------------------------
@@ -195,7 +195,7 @@ body {
 .hamburger-input {
   margin: 0 5px;
 }
-.members-count {
+#members-count {
   color: $clr-wt-90;
   font-size: $fnt-l;
   font-weight: $wgt-bold;
@@ -207,7 +207,7 @@ body {
 #emoji-picker-btn {
   margin-right: 5px;
 }
-.message-form__input {
+#message-form__input {
   flex-grow: 1; // grows input field to max-width
   border: 1px solid $clr-gold;
   border-radius: $radius-20;
@@ -217,7 +217,7 @@ body {
 //----------------------------
 // MESSAGE INPUT FORM SECTION
 //----------------------------
-.message-form {
+#message-form {
   @include position-fixed-input; // fixes keyboard scroll
   display: flex;
 
@@ -284,7 +284,7 @@ body {
   .hamburger-sidebar {
     display: none !important;
   }
-  .message-form {
+  #message-form {
     position: static;
     padding: 5px;
     width: 100%;
@@ -293,14 +293,14 @@ body {
     padding: 0;
   }
 
-  .message-section {
+  #message-section {
     border-right: 2px solid $clr-gray-brd;
   }
   #emoji-picker {
     margin: 0 0 10px 10px;
     bottom: 50px;
   }
-  .members-list {
+  #members-list {
     .member {
       font-size: $fnt-l;
     }
