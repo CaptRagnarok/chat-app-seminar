@@ -112,6 +112,7 @@ body {
 #message-section {
   @include flex-column;
   background-image: url('../images/black-linen.png');
+  background-color: $clr-gr;
   // background-size: 16px 16px; prolly delete
   overflow: hidden;
   width: 100%;
