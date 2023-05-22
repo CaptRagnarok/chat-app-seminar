@@ -66,6 +66,8 @@ body {
   background: #080710; }
 
 .background {
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -80,29 +82,38 @@ body {
   width: 100px; }
 
 .shape:first-child {
+  background: -webkit-gradient(linear, left top, left bottom, from(#cf8700), to(#f6e423));
+  background: -o-linear-gradient(#cf8700, #f6e423);
   background: linear-gradient(#cf8700, #f6e423);
   left: 250px;
   top: 0; }
 
 .shape:last-child {
+  background: -webkit-gradient(linear, right top, left top, from(#2d5e15), to(#259d01));
+  background: -o-linear-gradient(right, #2d5e15, #259d01);
   background: linear-gradient(to left, #2d5e15, #259d01);
   right: 240px;
   bottom: -10px; }
 
-.shape:first-child {
+body:has(button) .shape:first-child {
+  -webkit-animation: shape1 1.5s infinite ease-in-out;
   animation: shape1 1.5s infinite ease-in-out; }
 
 body:has(button) .shape:last-child {
+  -webkit-animation: shape2 1.5s infinite ease-in-out;
   animation: shape2 1.5s infinite ease-in-out; }
 
 form {
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   border: 2px solid rgba(255, 255, 255, 0.102);
   border-radius: 10px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.13);
   width: 280px;
@@ -141,11 +152,33 @@ input {
   margin-top: 10px; }
 
 input::placeholder {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
   color: #e6e6e6; }
+  input::placeholder input::-webkit-input-placeholder {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #e6e6e6; }
+  input::placeholder input::-moz-placeholder {
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #e6e6e6; }
+  input::placeholder input:-ms-input-placeholder {
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #e6e6e6; }
 
 input:focus::placeholder {
   color: #999999; }
+  input:focus::placeholder input:focus::-webkit-input-placeholder {
+    color: #999999; }
+  input:focus::placeholder input:focus::-moz-placeholder {
+    color: #999999; }
+  input:focus::placeholder input:focus:-ms-input-placeholder {
+    color: #999999; }
+  input:focus::placeholder input:focus::-ms-input-placeholder {
+    color: #999999; }
 
 button {
   background-color: #fff;
@@ -153,6 +186,8 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s linear;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   font-size: 1.125rem;
   font-weight: 600;
   width: 100%;
@@ -166,17 +201,43 @@ button:hover {
 
 @keyframes shape1 {
   0% {
+    -webkit-box-shadow: 0 0 0 0 #f6e423;
     box-shadow: 0 0 0 0 #f6e423; }
   70% {
+    box-shadow: 0 0 0 15px #080710;
+    -webkit-box-shadow: 0 0 0 15px #080710; }
+  100% {
+    -webkit-box-sizing: 0 0 0 0;
+    box-sizing: 0 0 0 0; } }
+@-webkit-keyframes shape1 {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #f6e423;
+    box-shadow: 0 0 0 0 #f6e423; }
+  70% {
+    -webkit-box-shadow: 0 0 0 15px #080710;
     box-shadow: 0 0 0 15px #080710; }
   100% {
+    -webkit-box-sizing: 0 0 0 0;
     box-sizing: 0 0 0 0; } }
 @keyframes shape2 {
   0% {
+    -webkit-box-shadow: 0 0 0 0 #259d01;
     box-shadow: 0 0 0 0 #259d01; }
   70% {
+    -webkit-box-shadow: 0 0 0 15px #080710;
     box-shadow: 0 0 0 15px #080710; }
   100% {
+    -webkit-box-sizing: 0 0 0 0;
+    box-sizing: 0 0 0 0; } }
+@-webkit-keyframes shape2 {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 #259d01;
+    box-shadow: 0 0 0 0 #259d01; }
+  70% {
+    -webkit-box-shadow: 0 0 0 15px #080710;
+    box-shadow: 0 0 0 15px #080710; }
+  100% {
+    -webkit-box-sizing: 0 0 0 0;
     box-sizing: 0 0 0 0; } }
 @media (min-width: 650px) {
   .background {
@@ -191,19 +252,27 @@ button:hover {
     width: 430px; }
 
   .shape:first-child {
-    background: linear-gradient(#cf8700, #f6e423);
     left: 320px;
     top: -80px; }
 
   .shape:last-child {
-    background: linear-gradient(to left, #2d5e15, #259d01);
     right: 270px;
     bottom: -80px; }
 
+  body:has(button) .shape:first-child {
+    -webkit-animation: none;
+    animation: none; }
+
+  body:has(button) .shape:last-child {
+    -webkit-animation: none;
+    animation: none; }
+
   body:has(button:hover) .shape:first-child {
+    -webkit-animation: shape1 1.5s infinite ease-in-out;
     animation: shape1 1.5s infinite ease-in-out; }
 
   body:has(button:hover) .shape:last-child {
+    -webkit-animation: shape1 1.5s infinite ease-in-out;
     animation: shape2 1.5s infinite ease-in-out; } }
 
 /*# sourceMappingURL=login.css.map */

@@ -1,6 +1,79 @@
 //--------------------
 // VENDOR PREFIXES
 //--------------------
+
+//login
+@mixin center-div-webkit {
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+@mixin shape-first-webkit {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#cf8700),
+    to(#f6e423)
+  );
+  background: -o-linear-gradient(#cf8700, #f6e423);
+}
+@mixin shape-last-webkit {
+  background: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#2d5e15),
+    to(#259d01)
+  );
+  background: -o-linear-gradient(right, #2d5e15, #259d01);
+}
+
+@mixin shape1-animation-webkit {
+  -webkit-animation: shape1 1.5s infinite ease-in-out;
+}
+@mixin shape2-animation-webkit {
+  -webkit-animation: shape2 1.5s infinite ease-in-out;
+}
+@mixin blur-webkit {
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@mixin input_placeholder-webkit {
+  input::-webkit-input-placeholder {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #e6e6e6;
+  }
+  input::-moz-placeholder {
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #e6e6e6;
+  }
+  input:-ms-input-placeholder {
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #e6e6e6;
+  }
+}
+@mixin input_focus-placeholder-webkit {
+  input:focus::-webkit-input-placeholder {
+    color: #999999;
+  }
+
+  input:focus::-moz-placeholder {
+    color: #999999;
+  }
+
+  input:focus:-ms-input-placeholder {
+    color: #999999;
+  }
+
+  input:focus::-ms-input-placeholder {
+    color: #999999;
+  }
+}
+//chatapp
 @mixin user-select-none-webkit {
   -webkit-touch-callout: none;
   -webkit-user-select: none;

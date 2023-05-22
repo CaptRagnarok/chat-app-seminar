@@ -34,22 +34,26 @@ body {
 }
 
 .shape:first-child {
+  @include shape-first-webkit;
   background: $gradient-1;
   left: 250px;
   top: 0;
 }
 
 .shape:last-child {
+  @include shape-last-webkit;
   background: $gradient-2;
   right: 240px;
   bottom: -10px;
 }
 
 // targets circles on button in mobile
-.shape:first-child {
+body:has(button) .shape:first-child {
+  @include shape1-animation-webkit;
   animation: shape1 1.5s infinite ease-in-out;
 }
 body:has(button) .shape:last-child {
+  @include shape2-animation-webkit;
   animation: shape2 1.5s infinite ease-in-out;
 }
 
@@ -60,6 +64,7 @@ body:has(button) .shape:last-child {
 form {
   @include border_n_shadow;
   @include center-div;
+  @include blur-webkit;
   backdrop-filter: $blur;
   background-color: $clr-gray-bcg;
   width: 280px;
@@ -99,14 +104,18 @@ input {
   margin-top: 10px;
 }
 input::placeholder {
+  @include input_placeholder-webkit;
+  @include transition-01-webkit;
   transition: $transition;
   color: $clr-wt-90;
 }
 input:focus::placeholder {
+  @include input_focus-placeholder-webkit;
   color: $clr-wt-60;
 }
 button {
   @include login-btn;
+  @include transition-01-webkit;
   font-size: $fnt-l;
   font-weight: $wgt-bold;
   width: 100%;
@@ -123,24 +132,58 @@ button:hover {
 
 @keyframes shape1 {
   0% {
+    -webkit-box-shadow: 0 0 0 0 $clr-yellow-lt;
     box-shadow: 0 0 0 0 $clr-yellow-lt;
   }
   70% {
     box-shadow: $shadow-animation;
+    -webkit-box-shadow: $shadow-animation;
   }
   100% {
+    -webkit-box-sizing: 0 0 0 0;
+    box-sizing: 0 0 0 0;
+  }
+}
+@-webkit-keyframes shape1 {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 $clr-yellow-lt;
+    box-shadow: 0 0 0 0 $clr-yellow-lt;
+  }
+  70% {
+    -webkit-box-shadow: $shadow-animation;
+    box-shadow: $shadow-animation;
+  }
+  100% {
+    -webkit-box-sizing: 0 0 0 0;
     box-sizing: 0 0 0 0;
   }
 }
 
 @keyframes shape2 {
   0% {
+    -webkit-box-shadow: 0 0 0 0 $clr-green-lt;
     box-shadow: 0 0 0 0 $clr-green-lt;
   }
   70% {
+    -webkit-box-shadow: $shadow-animation;
     box-shadow: $shadow-animation;
   }
   100% {
+    -webkit-box-sizing: 0 0 0 0;
+    box-sizing: 0 0 0 0;
+  }
+}
+@-webkit-keyframes shape2 {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 $clr-green-lt;
+    box-shadow: 0 0 0 0 $clr-green-lt;
+  }
+  70% {
+    -webkit-box-shadow: $shadow-animation;
+    box-shadow: $shadow-animation;
+  }
+  100% {
+    -webkit-box-sizing: 0 0 0 0;
     box-sizing: 0 0 0 0;
   }
 }
@@ -166,20 +209,28 @@ button:hover {
     width: 430px;
   }
   .shape:first-child {
-    background: $gradient-1;
     left: 320px;
     top: -80px;
   }
   .shape:last-child {
-    background: $gradient-2;
     right: 270px;
     bottom: -80px;
   }
   // targets circles on button hover
+  body:has(button) .shape:first-child {
+    -webkit-animation: none;
+    animation: none;
+  }
+  body:has(button) .shape:last-child {
+    -webkit-animation: none;
+    animation: none;
+  }
   body:has(button:hover) .shape:first-child {
+    -webkit-animation: shape1 1.5s infinite ease-in-out;
     animation: shape1 1.5s infinite ease-in-out;
   }
   body:has(button:hover) .shape:last-child {
+    -webkit-animation: shape1 1.5s infinite ease-in-out;
     animation: shape2 1.5s infinite ease-in-out;
   }
 }
