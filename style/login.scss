@@ -6,34 +6,39 @@
 @import 'base/variables';
 @import 'abstracts/mixins.scss';
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
 
-//---------------------
+//-----------------------
+// GENERAL
+//-----------------------
 
 body {
-  height: 100%;
   background: $clr-bk;
 }
-// background art code
+
+//-----------------------
+// BACKGROUND ART
+//-----------------------
+
 .background {
+  @include center-div;
   width: 360px;
   height: 520px;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
 }
+
 .background .shape {
+  border-radius: $radius-50;
+  position: absolute;
   height: 100px;
   width: 100px;
-  position: absolute;
-  border-radius: 50%;
 }
+
 .shape:first-child {
   background: $gradient-1;
   left: 250px;
   top: 0;
 }
+
 .shape:last-child {
   background: $gradient-2;
   right: 240px;
@@ -54,11 +59,11 @@ body:has(button) .shape:last-child {
 
 form {
   @include border_n_shadow;
-  @include blur;
   @include center-div;
+  backdrop-filter: $blur;
   background-color: $clr-gray-bcg;
-  height: 420px;
   width: 280px;
+  height: 420px;
   padding: 50px 35px;
 }
 
@@ -70,28 +75,28 @@ form * {
   letter-spacing: 0.5px;
 }
 form h3 {
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 42px;
+  font-size: $fnt-xxl;
+  font-weight: $wgt-normal;
   text-align: center;
+  line-height: 42px;
 }
 
 label {
+  font-size: $fnt-m;
+  font-weight: $wgt-normal;
   display: block;
   margin-top: 30px;
-  font-size: 16px;
-  font-weight: 500;
 }
 input {
   background-color: $clr-gray-inp;
+  font-size: $fnt-s;
+  font-weight: $wgt-thin;
   display: block;
   height: 50px;
   width: 100%;
   border-radius: 3px;
   padding: 0 10px;
   margin-top: 10px;
-  font-size: 14px;
-  font-weight: 300;
 }
 input::placeholder {
   transition: $transition;
@@ -101,12 +106,12 @@ input:focus::placeholder {
   color: $clr-wt-60;
 }
 button {
-  @include btn;
-  margin-top: 50px;
+  @include login-btn;
+  font-size: $fnt-l;
+  font-weight: $wgt-bold;
   width: 100%;
+  margin-top: 50px;
   padding: 15px 0;
-  font-size: 18px;
-  font-weight: 600;
 }
 button:hover {
   @include btn-hover;

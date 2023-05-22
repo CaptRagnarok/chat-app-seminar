@@ -5,7 +5,7 @@
 @import 'base/variables';
 @import 'abstracts/mixins.scss';
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
 
 //-----------------------
 // GENERAL
@@ -14,8 +14,6 @@
 body {
   @include flex-column;
   @include position-fixed-center;
-  display: flex;
-  flex-direction: column;
   font-family: $font;
   background-color: $clr-bk;
 }
@@ -31,7 +29,7 @@ body {
 //-----------------------
 
 #app-wrapper {
-  display: flex;
+  @include flex;
   margin: auto; // centers app
   max-width: 1280px;
   min-width: 360px;
@@ -43,95 +41,118 @@ body {
 //-----------------------
 // ONLINE SECTION
 //-----------------------
+
 #online-section {
   @include position-fixed-bleedfix;
+  @include transition-02-webkit;
+  background: $gradient-silver;
+  border-right: $brd-gray;
+  transition: $transition-02;
+  overflow: hidden;
   height: 100%;
   width: 0px; // responsive
   z-index: 4;
-  background: linear-gradient(71deg, #080509, #1a171c, #080509);
-  overflow: hidden;
-  border-right: 2px solid $clr-gray-brd;
-  transition: $transition-02;
 }
 
+// contains online count and logout
 #topbar {
   @include flex-center;
+  justify-content: space-between;
   height: 5vh;
   padding: 30px 5px 20px 5px;
 }
 
 #member-count-wrapper {
-  display: flex;
-  align-items: center;
+  @include flex-center;
   height: 0;
 }
+
 #members-count * {
   @include user-select-none;
 }
+
+// contains a list of online members
 #members-list {
   @include flex-column;
-  height: 95vh;
+  @include flex-align-webkit;
   align-items: center;
+  height: 95vh;
   width: 100%;
 }
+
 #members-list {
   .member {
     @include user-select-none;
     @include box-shadow($shadow-y);
-    border: 1px solid $clr-gold;
+    @include transition-02-webkit;
+    background: $clr-gr;
+    font-size: $fnt-m;
+    border: $brd-gold;
+    border-radius: $radius-10;
+    transition: $transition-02;
     text-align: center;
     padding: 10px;
     margin-bottom: 15px;
-    background: #262521;
-    margin-bottom: 15px;
-    border-radius: $radius-10;
-    transition: $transition-02;
     width: 100%;
     max-width: 16rem;
-    font-size: $fnt-m;
 
     &:hover {
       @include box-shadow($shadow-w);
+      @include transform-translate-webkit;
       transform: $translate;
-      border: 1px solid $clr-gray-brd;
+      border: $brd-white;
     }
   }
 }
 //-----------------------
 // MESSAGE SECTION
 //-----------------------
+
+// contains msg area and input bar area
 #message-section {
   @include flex-column;
   background-image: url('../images/black-linen.png');
-  background-size: 16px 16px;
-  width: 100%;
-  z-index: 1;
-  min-height: 0;
+  // background-size: 16px 16px; prolly delete
   overflow: hidden;
-  transition: all 4.5s ease; // what's this for XD
+  width: 100%;
+  min-height: 0;
+  z-index: 1;
 }
 
+// msg area
 .messages {
-  display: flex;
+  @include flex;
+  @include transition-02-webkit;
+  transition: $transition-02;
   flex-direction: column-reverse;
   overflow-y: auto;
   height: calc(100% - 40px);
-  transition: $transition-02;
 }
-/* msg content (once any msgs exist) */
+
+//msg content bubbles (once any msgs exist)
 .my-message,
 .message {
+  border-radius: $radius-10;
   margin: 10px;
   padding: 10px 10px;
-  border-radius: $radius-10;
 }
+
 .my-message {
+  @include my-message-webkit;
+  background: $gradient-gold;
   align-self: flex-end;
-  background: linear-gradient(180deg, $gradient-gold-dk, $gradient-gold-lt);
 }
+
 .message {
+  @include message-webkit;
+  background: $gradient-gray;
   align-self: flex-start;
-  background: linear-gradient(180deg, $gradient-gray-dk, $gradient-gray-lt);
+}
+
+// msg bubble content
+.member {
+  font-size: $fnt-s;
+  font-weight: $wgt-normal;
 }
 
 .message-content {
@@ -139,22 +160,21 @@ body {
   font-weight: $wgt-slim;
   padding-top: 3px;
 }
+
 .message-timestamp {
   font-size: $fnt-xs;
   font-weight: $wgt-normal;
   padding-top: 4px;
   text-align: right;
 }
+
+// shows who joined/left the chat
 .status-message {
   color: $clr-wt-90;
   font-weight: $wgt-slim;
   padding-bottom: 10px;
   font-style: italic;
   text-align: center;
-}
-.member {
-  font-size: $fnt-s;
-  font-weight: $wgt-normal;
 }
 
 //-----------------------
@@ -169,6 +189,7 @@ body {
 .font-awesome {
   cursor: pointer;
 }
+
 // Online counter has normal cursor
 .fa-users,
 #members-count {
@@ -177,56 +198,62 @@ body {
 //------------------------------
 // FONT AWESOME / ICONS / INPUT
 //------------------------------
+
 .font-awesome {
+  @include transition-01-webkit;
   color: $clr-wt-90;
   font-size: $fnt-l;
   transition: $transition;
   padding: 10px;
 }
+
 .font-awesome-sidebar {
   @extend .font-awesome;
   font-size: $fnt-xl;
 }
+
 .font-awesome-input {
   @extend .font-awesome;
   background-color: $clr-gray-brd;
   border-radius: $radius-20;
 }
+
 .hamburger-input {
   margin: 0 5px;
 }
+
 #members-count {
   color: $clr-wt-90;
   font-size: $fnt-l;
   font-weight: $wgt-bold;
 }
-.font-awesome-input:hover,
-.fa-right-from-bracket:hover {
-  color: rgb(202, 173, 4);
-}
+
 #emoji-picker-btn {
   margin-right: 5px;
 }
+
 #message-form__input {
-  flex-grow: 1; // grows input field to max-width
-  border: 1px solid $clr-gold;
-  border-radius: $radius-20;
-  padding: 10px 15px;
+  @include message-form__input-webkit;
   font-size: $fnt-m;
+  border: $brd-gold;
+  border-radius: $radius-20;
+  flex-grow: 1; // grows input field to max-width
+  padding: 10px 15px;
 }
+
 //----------------------------
 // MESSAGE INPUT FORM SECTION
 //----------------------------
-#message-form {
-  @include position-fixed-input; // fixes keyboard scroll
-  display: flex;
 
+#message-form {
+  @include flex;
+  @include position-fixed-input; // fixes keyboard scroll
+  background-color: $clr-bk;
   justify-content: center;
   align-items: center;
   align-self: center;
-  padding: 5px 0;
   width: 100%;
-  background-color: $clr-bk;
+  padding: 5px 0;
   z-index: 3;
 }
 
@@ -237,30 +264,31 @@ body {
 // emoji div
 #emoji-picker {
   @include flex-emoji-picker;
-  position: fixed;
-  bottom: 10px;
   background: $clr-blue;
+  border-radius: $radius-10;
   transition: $transition-02;
+  bottom: 10px;
+  position: fixed;
+  overflow: hidden;
   column-gap: 3px;
   height: 0;
   width: 355px;
-  overflow: hidden;
-  border-radius: $radius-10;
   margin: 0 auto 50px auto;
   z-index: 2;
 }
+
 #emoji-picker.visible {
   height: 250px;
 }
 
 .emoji {
   @include flex-emoji-picker;
-  background-color: rgba($color: $clr-blue-lt, $alpha: 0.5);
+  font-size: $fnt-emoji;
+  background-color: $clr-blue-lt;
+  border-radius: $radius-50;
   transition: $transition;
   height: 40px;
   width: 40px;
-  font-size: $fnt-emoji;
-  border-radius: $radius-50;
 
   &:hover {
     background: $clr-blue-hv;
@@ -270,43 +298,55 @@ body {
 //-----------------------
 // MEDIA QUERIES
 //-----------------------
+
 @media (min-width: 650px) {
   #online-section {
-    width: 30rem;
-    border-left: 2px solid $clr-gray-brd; // added here so there is no border bleed on mobile
-
+    border-left: $brd-gray; // added here so there is no border bleed on mobile
     position: static;
     height: 100%;
-  }
-  .hamburger-input {
-    display: none !important;
-  }
-  .hamburger-sidebar {
-    display: none !important;
-  }
-  #message-form {
-    position: static;
-    padding: 5px;
-    width: 100%;
-  }
-  .messages {
-    padding: 0;
+    width: 30rem;
   }
 
-  #message-section {
-    border-right: 2px solid $clr-gray-brd;
-  }
-  #emoji-picker {
-    margin: 0 0 10px 10px;
-    bottom: 50px;
-  }
   #members-list {
     .member {
       font-size: $fnt-l;
     }
   }
+
+  #message-section {
+    border-right: $brd-gray;
+  }
+
+  .messages {
+    padding: 0;
+  }
+
   .message,
   .my-message {
     max-width: 50%;
+  }
+
+  #emoji-picker {
+    margin: 0 0 10px 10px;
+    bottom: 50px;
+  }
+
+  #message-form {
+    position: static;
+    padding: 5px;
+    width: 100%;
+  }
+
+  .hamburger-input {
+    display: none !important;
+  }
+
+  .hamburger-sidebar {
+    display: none !important;
+  }
+
+  .font-awesome-input:hover,
+  .fa-right-from-bracket:hover {
+    color: $clr-gold;
   }
 }
