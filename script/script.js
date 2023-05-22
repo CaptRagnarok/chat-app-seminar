@@ -271,12 +271,16 @@ emojiPickerBtn.addEventListener('click', () => {
 
 // inserts the selected emoji into the message input
 emojiPicker.addEventListener('click', (event) => {
-  const emoji = event.target.textContent;
-  if (emoji) {
+  const isEmoji = event.target.classList.contains('emoji');
+  if (isEmoji) {
+    const emoji = event.target.textContent;
     insertEmoji(emoji);
 
     //refocuses on input field
     DOM.input.focus();
+  } else {
+    // if clicked on emoji picker, but not emoji
+    event.stopPropagation();
   }
 });
 
@@ -334,14 +338,14 @@ hamburger2.addEventListener('click', function () {
 });
 
 // CODE IN PROGRESS, NEED TO MAKE DOM CLOSE ONLINE SECTION WHEN CLICKING ANYWHERE ELSE, BUT ONLY ON SMALL SCREENS
-// function handleDocumentClick(event) {
-//   const target = event.target;
-//   const isOnlineSection = onlineSection.contains(target);
-//   const isHamburger = hamburger.contains(target);
+function handleDocumentClick(event) {
+  const target = event.target;
+  const isOnlineSection = onlineSection.contains(target);
+  const isHamburger = hamburger.contains(target);
 
-//   if (!isOnlineSection && !isHamburger) {
-//     closeMenu();
-//   }
-// }
+  if (!isOnlineSection && !isHamburger && window.innerWidth <= 650) {
+    closeMenu();
+  }
+}
 
-// document.addEventListener('click', handleDocumentClick); // closes sidebar when you click anywhere, but needs more work
+document.addEventListener('click', handleDocumentClick); // closes sidebar when you click anywhere, but needs more work

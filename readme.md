@@ -8,6 +8,24 @@ Designed to be a working chat app using the _Scaledrone API_ for functionality.
 
 ## Changelog
 
+### 0.8.0
+
+- Fixed various layout issues
+
+  - Sidebar margins and width
+  - Icon size
+  - Message max width on large screens
+  - Border bleeding issues when they should be invisible
+
+- Sidebar can now be closed by clicking anywhere else (on mobile)
+
+- Fixed bug where pressing emoji picker inserts all emoji at once
+
+- Yet to be done:
+  - Font sizes, weight and some colors
+  - Fine-tuning final colors
+  - Code cleanup and optimization
+
 ### 0.7.0
 
 - Color pallete updated, final colors chosen

@@ -5,6 +5,8 @@
 @import 'base/variables';
 @import 'abstracts/mixins.scss';
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 //-----------------------
 // DEBUG
 //-----------------------
@@ -15,13 +17,14 @@
 //-----------------------
 // GENERAL
 //-----------------------
+
 body {
   @include flex-column;
   @include position-fixed-center;
   display: flex;
   flex-direction: column;
+  font-family: $fnt-login;
   background-color: $clr-bk;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* First three rows */
@@ -57,7 +60,6 @@ body {
   z-index: 3;
   background: linear-gradient(71deg, #080509, #1a171c, #080509);
   overflow: hidden;
-  border-left: 2px solid $clr-gray-brd;
   border-right: 2px solid $clr-gray-brd;
   transition: $transition-02;
 }
@@ -65,7 +67,7 @@ body {
 .topbar {
   @include flex-center;
   height: 5vh;
-  padding: 0 5px;
+  padding: 30px 5px 20px 5px;
 }
 
 .member-count-wrapper {
@@ -73,12 +75,17 @@ body {
   align-items: center;
   height: 0;
 }
-.members-count {
+.members-count * {
   @include user-select-none;
 }
 .members-list {
   @include flex-column;
   height: 95vh;
+  align-items: center;
+  width: 100%;
+}
+div .member {
+  color: red;
 }
 .members-list {
   .member {
@@ -87,12 +94,14 @@ body {
     border: 1px solid #caad04;
     text-align: center;
     padding: 10px;
-    margin-bottom: 10px;
-    font-size: 20px;
+    margin-bottom: 15px;
     background: #262521;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 15px;
     border-radius: $radius-10;
     transition: $transition-02;
+    width: 100%;
+    max-width: 16rem;
+    font-size: 1rem;
 
     &:hover {
       @include box-shadow($shadow-w);
@@ -106,13 +115,6 @@ body {
 //-----------------------
 .message-section {
   @include flex-column;
-  background-color: rgba($color: #5c5c5c, $alpha: 0.2);
-  //test
-  // background: radial-gradient(black 15%, transparent 16%) 0 0,
-  //   radial-gradient(black 15%, transparent 16%) 8px 8px,
-  //   radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
-  //   radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
-  // background-color: #181818;
   background-image: url('../images/black-linen.png');
   background-size: 16px 16px;
   width: 100%;
@@ -130,7 +132,6 @@ body {
   transition: $transition-02;
   // flex-shrink: 1; //is this needed
 }
-
 /* msg content (once any msgs exist) */
 .message {
   align-self: flex-start;
@@ -161,6 +162,8 @@ body {
   text-align: center;
   font-weight: bold;
   font-style: italic;
+  color: #e6e6e6;
+  padding-bottom: 10px;
 }
 
 //-----------------------
@@ -187,9 +190,11 @@ body {
   color: $clr-wt-90;
   font-size: 18px;
   padding: 10px;
+  transition: $transition;
 }
 .font-awesome-sidebar {
   @extend .font-awesome;
+  font-size: 23px;
 }
 .font-awesome-input {
   @extend .font-awesome;
@@ -203,6 +208,10 @@ body {
   color: $clr-wt-90;
   font-size: 18px;
   font-weight: bold;
+}
+.font-awesome-input:hover,
+.fa-right-from-bracket:hover {
+  color: rgb(202, 173, 4);
 }
 #emoji-picker-btn {
   margin-right: 5px;
@@ -273,6 +282,7 @@ body {
 @media (min-width: 650px) {
   .online-section {
     width: 30rem;
+    border-left: 2px solid $clr-gray-brd; // added here so there is no border bleed on mobile
 
     position: static;
     height: 100%;
@@ -298,5 +308,14 @@ body {
   #emoji-picker {
     margin: 0 0 10px 10px;
     bottom: 50px;
+  }
+  .members-list {
+    .member {
+      font-size: 1.125rem;
+    }
+  }
+  .message,
+  .my-message {
+    max-width: 50%;
   }
 }

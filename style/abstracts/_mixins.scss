@@ -29,7 +29,7 @@
 @mixin border_n_shadow {
   border-radius: 10px;
   border: 2px solid $clr-gray-brd;
-  box-shadow: $shadow;
+  box-shadow: $shadow-login;
 }
 @mixin blur {
   backdrop-filter: blur(10px);
@@ -80,6 +80,7 @@
   left: 0;
   right: 10%;
 }
+
 //--------------------
 // WEBKIT PROPERTIES
 //--------------------

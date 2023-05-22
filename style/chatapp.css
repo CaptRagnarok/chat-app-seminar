@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
   height: 100vh;
   min-height: -webkit-fill-available;
@@ -72,8 +73,8 @@ body {
   bottom: 0;
   display: flex;
   flex-direction: column;
-  background-color: #080710;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+  font-family: "Poppins", sans-serif;
+  background-color: #080710; }
 
 /* First three rows */
 .member-count-wrapper,
@@ -99,7 +100,6 @@ body {
   z-index: 3;
   background: linear-gradient(71deg, #080509, #1a171c, #080509);
   overflow: hidden;
-  border-left: 2px solid rgba(255, 255, 255, 0.102);
   border-right: 2px solid rgba(255, 255, 255, 0.102);
   transition: all 0.5s ease; }
 
@@ -108,14 +108,14 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 5vh;
-  padding: 0 5px; }
+  padding: 30px 5px 20px 5px; }
 
 .member-count-wrapper {
   display: flex;
   align-items: center;
   height: 0; }
 
-.members-count {
+.members-count * {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -126,7 +126,12 @@ body {
 .members-list {
   display: flex;
   flex-direction: column;
-  height: 95vh; }
+  height: 95vh;
+  align-items: center;
+  width: 100%; }
+
+div .member {
+  color: red; }
 
 .members-list .member {
   -webkit-touch-callout: none;
@@ -135,18 +140,20 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-box-shadow: 2px 3px 5px 0px #caad04;
-  -moz-box-shadow: 2px 3px 5px 0px #caad04;
-  box-shadow: 2px 3px 5px 0px #caad04;
+  -webkit-box-shadow: 1px 1px 5px 0px #caad04;
+  -moz-box-shadow: 1px 1px 5px 0px #caad04;
+  box-shadow: 1px 1px 5px 0px #caad04;
   border: 1px solid #caad04;
   text-align: center;
   padding: 10px;
-  margin-bottom: 10px;
-  font-size: 20px;
+  margin-bottom: 15px;
   background: #262521;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 15px;
   border-radius: 10px;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  width: 100%;
+  max-width: 16rem;
+  font-size: 1rem; }
   .members-list .member:hover {
     -webkit-box-shadow: 0.5px 1px 5px 1.5px white;
     -moz-box-shadow: 0.5px 1px 5px 1.5px white;
@@ -157,7 +164,6 @@ body {
 .message-section {
   display: flex;
   flex-direction: column;
-  background-color: rgba(92, 92, 92, 0.2);
   background-image: url("../images/black-linen.png");
   background-size: 16px 16px;
   width: 100%;
@@ -201,7 +207,9 @@ body {
 .status-message {
   text-align: center;
   font-weight: bold;
-  font-style: italic; }
+  font-style: italic;
+  color: #e6e6e6;
+  padding-bottom: 10px; }
 
 #emoji-picker,
 #emoji-picker-btn,
@@ -219,7 +227,11 @@ body {
 .font-awesome, .font-awesome-sidebar, .font-awesome-input {
   color: #e6e6e6;
   font-size: 18px;
-  padding: 10px; }
+  padding: 10px;
+  transition: all 0.3s; }
+
+.font-awesome-sidebar {
+  font-size: 23px; }
 
 .font-awesome-input {
   background-color: rgba(255, 255, 255, 0.102);
@@ -232,6 +244,10 @@ body {
   color: #e6e6e6;
   font-size: 18px;
   font-weight: bold; }
+
+.font-awesome-input:hover,
+.fa-right-from-bracket:hover {
+  color: #caad04; }
 
 #emoji-picker-btn {
   margin-right: 5px; }
@@ -294,6 +310,7 @@ body {
 @media (min-width: 650px) {
   .online-section {
     width: 30rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.102);
     position: static;
     height: 100%; }
 
@@ -316,6 +333,13 @@ body {
 
   #emoji-picker {
     margin: 0 0 10px 10px;
-    bottom: 50px; } }
+    bottom: 50px; }
+
+  .members-list .member {
+    font-size: 1.125rem; }
+
+  .message,
+  .my-message {
+    max-width: 50%; } }
 
 /*# sourceMappingURL=chatapp.css.map */

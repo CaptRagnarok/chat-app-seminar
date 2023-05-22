@@ -37,8 +37,11 @@ $fnt-login: 'Poppins', sans-serif;
 // DESIGN
 //-----------------------
 
-$shadow-y: 2px 3px 5px 0px rgba(202, 173, 4, 1);
+$shadow-login: 0 0 40px rgba(8, 7, 16, 0.6);
+
+$shadow-y: 1px 1px 5px 0px rgb(202, 173, 4);
 $shadow-w: 0.5px 1px 5px 1.5px rgba(255, 255, 255, 1);
+
 $shadow-animation: 0 0 0 15px $clr-bk;
 
 $radius-10: 10px;
