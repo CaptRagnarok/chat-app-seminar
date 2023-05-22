@@ -8,6 +8,10 @@ Designed to be a working chat app using the _Scaledrone API_ for functionality.
 
 ## Changelog
 
+### 0.9.1/2
+
+- More vendor prefixes (login)
+
 ### 0.9.0
 
 - CSS code cleanup
