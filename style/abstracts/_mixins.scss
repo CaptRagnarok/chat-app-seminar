@@ -43,6 +43,14 @@
   outline: none;
   border: none;
 }
+
+//--------------------
+// STYLE
+//--------------------
+@mixin border($color) {
+  border: 1px solid $color;
+}
+
 //--------------------
 // RESPONSIVE DESIGN
 //--------------------

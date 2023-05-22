@@ -26,7 +26,6 @@ const drone = new ScaleDrone(CLIENT_ID, {
   data: {
     // Will be sent out as clientData via events
     name: localStorage.getItem('name') || '',
-    // color: getRandomColor(),
     color: '#e6e6e6',
   },
 });
@@ -92,11 +91,6 @@ drone.on('close', (event) => {
 drone.on('error', (error) => {
   console.error(error);
 });
-
-// this one returns a random color hex
-function getRandomColor() {
-  return '#' + Math.floor(Math.random() * 0xffffff).toString(16);
-}
 
 //----------------------
 // LOGOUT FUNCTIONALITY
@@ -308,7 +302,7 @@ function insertEmoji(emoji) {
 //-----------------------------
 const hamburger = document.querySelector('.hamburger-input');
 const hamburger2 = document.querySelector('.hamburger-sidebar');
-const onlineSection = document.querySelector('.online-section');
+const onlineSection = document.querySelector('#online-section');
 
 let menuOpen = false;
 

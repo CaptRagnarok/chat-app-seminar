@@ -5,14 +5,7 @@
 @import 'base/variables';
 @import 'abstracts/mixins.scss';
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-//-----------------------
-// DEBUG
-//-----------------------
-// * {
-//   outline: 2px dotted red;
-// }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 //-----------------------
 // GENERAL
@@ -23,24 +16,22 @@ body {
   @include position-fixed-center;
   display: flex;
   flex-direction: column;
-  font-family: $fnt-login;
+  font-family: $font;
   background-color: $clr-bk;
 }
 
-/* First three rows */
 .member-count-wrapper,
 .members-list,
 .messages {
-  // border: 1px solid #e4e4e4;
   padding: 15px;
 }
+
 //-----------------------
 // MAIN STRUCTURE
 //-----------------------
 
 #app-wrapper {
   display: flex;
-  // background-color: $clr-bk;
   margin: auto; // centers app
   max-width: 1280px;
   min-width: 360px;
@@ -52,12 +43,11 @@ body {
 //-----------------------
 // ONLINE SECTION
 //-----------------------
-.online-section {
+#online-section {
   @include position-fixed-bleedfix;
   height: 100%;
   width: 0px; // responsive
-  left: -2px; // fix for bleeding in viewport
-  z-index: 3;
+  z-index: 4;
   background: linear-gradient(71deg, #080509, #1a171c, #080509);
   overflow: hidden;
   border-right: 2px solid $clr-gray-brd;
@@ -84,14 +74,11 @@ body {
   align-items: center;
   width: 100%;
 }
-div .member {
-  color: red;
-}
 .members-list {
   .member {
     @include user-select-none;
     @include box-shadow($shadow-y);
-    border: 1px solid #caad04;
+    border: 1px solid $clr-gold;
     text-align: center;
     padding: 10px;
     margin-bottom: 15px;
@@ -101,7 +88,7 @@ div .member {
     transition: $transition-02;
     width: 100%;
     max-width: 16rem;
-    font-size: 1rem;
+    font-size: $fnt-m;
 
     &:hover {
       @include box-shadow($shadow-w);
@@ -121,7 +108,7 @@ div .member {
   z-index: 1;
   min-height: 0;
   overflow: hidden;
-  transition: all 4.5s ease;
+  transition: all 4.5s ease; // what's this for XD
 }
 
 .messages {
@@ -130,40 +117,44 @@ div .member {
   overflow-y: auto;
   height: calc(100% - 40px);
   transition: $transition-02;
-  // flex-shrink: 1; //is this needed
 }
 /* msg content (once any msgs exist) */
+.my-message,
 .message {
-  align-self: flex-start;
-  background-color: #999999;
   margin: 10px;
   padding: 10px 10px;
   border-radius: $radius-10;
 }
 .my-message {
   align-self: flex-end;
-  background-color: #bda61d;
-  margin: 10px;
-  padding: 10px 10px;
-  border-radius: $radius-10;
-  font-weight: 500;
+  background: linear-gradient(180deg, $gradient-gold-dk, $gradient-gold-lt);
+}
+.message {
+  align-self: flex-start;
+  background: linear-gradient(180deg, $gradient-gray-dk, $gradient-gray-lt);
 }
 
 .message-content {
+  font-size: $fnt-l;
+  font-weight: $wgt-slim;
   padding-top: 3px;
-  font-size: 18px;
 }
 .message-timestamp {
-  font-size: 12px;
-  text-align: right;
+  font-size: $fnt-xs;
+  font-weight: $wgt-normal;
   padding-top: 4px;
+  text-align: right;
 }
 .status-message {
-  text-align: center;
-  font-weight: bold;
-  font-style: italic;
-  color: #e6e6e6;
+  color: $clr-wt-90;
+  font-weight: $wgt-slim;
   padding-bottom: 10px;
+  font-style: italic;
+  text-align: center;
+}
+.member {
+  font-size: $fnt-s;
+  font-weight: $wgt-normal;
 }
 
 //-----------------------
@@ -188,13 +179,13 @@ div .member {
 //------------------------------
 .font-awesome {
   color: $clr-wt-90;
-  font-size: 18px;
-  padding: 10px;
+  font-size: $fnt-l;
   transition: $transition;
+  padding: 10px;
 }
 .font-awesome-sidebar {
   @extend .font-awesome;
-  font-size: 23px;
+  font-size: $fnt-xl;
 }
 .font-awesome-input {
   @extend .font-awesome;
@@ -206,8 +197,8 @@ div .member {
 }
 .members-count {
   color: $clr-wt-90;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: $fnt-l;
+  font-weight: $wgt-bold;
 }
 .font-awesome-input:hover,
 .fa-right-from-bracket:hover {
@@ -218,10 +209,10 @@ div .member {
 }
 .message-form__input {
   flex-grow: 1; // grows input field to max-width
-  border: 1px solid #16bb00;
+  border: 1px solid $clr-gold;
   border-radius: $radius-20;
   padding: 10px 15px;
-  font-size: 16px;
+  font-size: $fnt-m;
 }
 //----------------------------
 // MESSAGE INPUT FORM SECTION
@@ -248,7 +239,7 @@ div .member {
   @include flex-emoji-picker;
   position: fixed;
   bottom: 10px;
-  background: #003e70;
+  background: $clr-blue;
   transition: $transition-02;
   column-gap: 3px;
   height: 0;
@@ -264,15 +255,15 @@ div .member {
 
 .emoji {
   @include flex-emoji-picker;
-  background-color: rgba($color: #5c83a5, $alpha: 0.5);
+  background-color: rgba($color: $clr-blue-lt, $alpha: 0.5);
   transition: $transition;
   height: 40px;
   width: 40px;
-  font-size: 22px;
+  font-size: $fnt-emoji;
   border-radius: $radius-50;
 
   &:hover {
-    background: #b3c4d1;
+    background: $clr-blue-hv;
   }
 }
 
@@ -280,7 +271,7 @@ div .member {
 // MEDIA QUERIES
 //-----------------------
 @media (min-width: 650px) {
-  .online-section {
+  #online-section {
     width: 30rem;
     border-left: 2px solid $clr-gray-brd; // added here so there is no border bleed on mobile
 
@@ -311,7 +302,7 @@ div .member {
   }
   .members-list {
     .member {
-      font-size: 1.125rem;
+      font-size: $fnt-l;
     }
   }
   .message,

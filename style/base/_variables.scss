@@ -14,6 +14,11 @@ $clr-gray-brd: rgba(255, 255, 255, 0.102);
 $clr-gray-inp: rgba(255, 255, 255, 0.07);
 $clr-gray-bcg: rgba(255, 255, 255, 0.13);
 
+$clr-gold: #caad04;
+$clr-blue: #003e70;
+$clr-blue-lt: #5c83a5;
+$clr-blue-hv: #b3c4d1;
+
 $clr-yellow-dk: #cf8700;
 $clr-yellow-lt: #f6e423;
 
@@ -22,16 +27,29 @@ $clr-green-lt: #259d01;
 
 $gradient-1: linear-gradient(#cf8700, #f6e423);
 $gradient-2: linear-gradient(to left, #2d5e15, #259d01);
-// $gradient-3: linear-gradient(#3831a0, #151242);
-$gradient-3: linear-gradient(#3831a0, #151242);
-// $gradient-3: linear-gradient(#1845ad, #23a2f6);
-// $gradient-4: linear-gradient(to left, #ff512f, #f09819);
+
+$gradient-gold-dk: rgba(151, 133, 23, 1) 20%;
+$gradient-gold-lt: rgba(189, 166, 29, 1) 100%;
+
+$gradient-gray-dk: rgba(122, 122, 122, 1) 20%;
+$gradient-gray-lt: rgba(153, 153, 153, 1) 100%;
 
 //-----------------------
 // TYPOGRAPHY
 //-----------------------
 
-$fnt-login: 'Poppins', sans-serif;
+$font: 'Poppins', sans-serif;
+
+$fnt-xs: 0.75rem;
+$fnt-s: 0.875rem;
+$fnt-m: 1rem;
+$fnt-l: 1.125rem;
+$fnt-xl: 1.5rem;
+$fnt-emoji: 1.375rem;
+
+$wgt-bold: 600;
+$wgt-normal: 500;
+$wgt-slim: 400;
 
 //-----------------------
 // DESIGN

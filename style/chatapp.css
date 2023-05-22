@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 html {
   height: 100vh;
   min-height: -webkit-fill-available;
@@ -76,7 +76,6 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #080710; }
 
-/* First three rows */
 .member-count-wrapper,
 .members-list,
 .messages {
@@ -91,13 +90,12 @@ body {
   height: 100%;
   z-index: 0; }
 
-.online-section {
+#online-section {
   position: fixed;
   left: -2px;
   height: 100%;
   width: 0px;
-  left: -2px;
-  z-index: 3;
+  z-index: 4;
   background: linear-gradient(71deg, #080509, #1a171c, #080509);
   overflow: hidden;
   border-right: 2px solid rgba(255, 255, 255, 0.102);
@@ -129,9 +127,6 @@ body {
   height: 95vh;
   align-items: center;
   width: 100%; }
-
-div .member {
-  color: red; }
 
 .members-list .member {
   -webkit-touch-callout: none;
@@ -180,36 +175,41 @@ div .member {
   transition: all 0.5s ease; }
 
 /* msg content (once any msgs exist) */
+.my-message,
 .message {
-  align-self: flex-start;
-  background-color: #999999;
   margin: 10px;
   padding: 10px 10px;
   border-radius: 10px; }
 
 .my-message {
   align-self: flex-end;
-  background-color: #bda61d;
-  margin: 10px;
-  padding: 10px 10px;
-  border-radius: 10px;
-  font-weight: 500; }
+  background: linear-gradient(180deg, #978517 20%, #bda61d 100%); }
+
+.message {
+  align-self: flex-start;
+  background: linear-gradient(180deg, #7a7a7a 20%, #999999 100%); }
 
 .message-content {
-  padding-top: 3px;
-  font-size: 18px; }
+  font-size: 1.125rem;
+  font-weight: 400;
+  padding-top: 3px; }
 
 .message-timestamp {
-  font-size: 12px;
-  text-align: right;
-  padding-top: 4px; }
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding-top: 4px;
+  text-align: right; }
 
 .status-message {
-  text-align: center;
-  font-weight: bold;
-  font-style: italic;
   color: #e6e6e6;
-  padding-bottom: 10px; }
+  font-weight: 400;
+  padding-bottom: 10px;
+  font-style: italic;
+  text-align: center; }
+
+.member {
+  font-size: 0.875rem;
+  font-weight: 500; }
 
 #emoji-picker,
 #emoji-picker-btn,
@@ -226,12 +226,12 @@ div .member {
 
 .font-awesome, .font-awesome-sidebar, .font-awesome-input {
   color: #e6e6e6;
-  font-size: 18px;
-  padding: 10px;
-  transition: all 0.3s; }
+  font-size: 1.125rem;
+  transition: all 0.3s;
+  padding: 10px; }
 
 .font-awesome-sidebar {
-  font-size: 23px; }
+  font-size: 1.5rem; }
 
 .font-awesome-input {
   background-color: rgba(255, 255, 255, 0.102);
@@ -242,8 +242,8 @@ div .member {
 
 .members-count {
   color: #e6e6e6;
-  font-size: 18px;
-  font-weight: bold; }
+  font-size: 1.125rem;
+  font-weight: 600; }
 
 .font-awesome-input:hover,
 .fa-right-from-bracket:hover {
@@ -254,10 +254,10 @@ div .member {
 
 .message-form__input {
   flex-grow: 1;
-  border: 1px solid #16bb00;
+  border: 1px solid #caad04;
   border-radius: 20px;
   padding: 10px 15px;
-  font-size: 16px; }
+  font-size: 1rem; }
 
 .message-form {
   position: fixed;
@@ -302,13 +302,13 @@ div .member {
   transition: all 0.3s;
   height: 40px;
   width: 40px;
-  font-size: 22px;
+  font-size: 1.375rem;
   border-radius: 50%; }
   .emoji:hover {
     background: #b3c4d1; }
 
 @media (min-width: 650px) {
-  .online-section {
+  #online-section {
     width: 30rem;
     border-left: 2px solid rgba(255, 255, 255, 0.102);
     position: static;
