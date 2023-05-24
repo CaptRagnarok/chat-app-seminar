@@ -1,11 +1,8 @@
-@import 'prefixes.scss';
-
 //------------------
 // BASE FUNCTION
 //------------------
 
 @mixin center-div {
-  @include center-div-webkit;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -56,30 +53,20 @@
 // RESPONSIVE DESIGN
 //--------------------
 //stays, used 3x
-@mixin flex {
-  @include flex-webkit;
-  display: flex;
-}
 
 @mixin flex-column {
-  @include flex-column-webkit;
   display: flex;
   flex-direction: column;
 }
 @mixin flex-center {
-  @include flex-center-webkit;
   display: flex;
   align-items: center;
 }
 @mixin flex-emoji-picker {
-  @include flex-emoji-picker-webkit;
-  @include transition-01-webkit;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  -webkit-column-gap: 3px;
-  -moz-column-gap: 3px;
 }
 @mixin position-fixed-center {
   position: fixed;
@@ -98,20 +85,4 @@
   bottom: 0;
   left: 0;
   right: 10%;
-}
-//--------------------
-// FIXES
-//--------------------
-@mixin user-select-none {
-  @include user-select-none-webkit;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-@mixin box-shadow($shadow) {
-  @include box-shadow-webkit($shadow);
-  box-shadow: $shadow;
 }

@@ -8,6 +8,12 @@ Designed to be a working chat app using the _Scaledrone API_ for functionality.
 
 ## Changelog
 
+### 0.9.4
+
+- Cleaned code up further
+  - Removed manually added vendor prefixes
+  - Live Sass Compiler now adds vendor prefixes automatically on compilation
+
 ### 0.9.3
 
 - Forgot to include \_prefixes, fixed
